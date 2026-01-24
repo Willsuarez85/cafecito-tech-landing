@@ -1,0 +1,279 @@
+/* ==========================================================================
+   Cafecito Tech - Responsive Styles
+   Mobile-first breakpoints: 768px, 1024px, 1280px
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------
+   Tablet (768px+)
+   ------------------------------------------------------------------------- */
+
+@media (min-width: 768px) {
+  /* Container */
+  :root {
+    --container-padding: var(--space-6);
+  }
+
+  /* Navbar */
+  .navbar__nav {
+    display: block;
+  }
+
+  .navbar__cta {
+    display: inline-flex;
+  }
+
+  .navbar__menu-toggle {
+    display: none;
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: calc(100px + var(--space-12));
+  }
+
+  .hero__title {
+    font-size: var(--text-4xl);
+  }
+
+  .hero__inner {
+    flex-direction: row;
+    text-align: left;
+    gap: var(--space-10);
+    align-items: center;
+  }
+
+  .hero__content {
+    flex: 1;
+  }
+
+  .hero__subtitle {
+    margin-inline: 0;
+  }
+
+  .hero__ctas {
+    justify-content: flex-start;
+  }
+
+  .hero__visual {
+    flex-shrink: 0;
+    width: 380px;
+    max-width: none;
+  }
+
+  .hero__event {
+    margin-top: var(--space-8);
+  }
+
+  /* Next Event Card */
+  .next-event__details {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+  /* What Is Section */
+  .what-is__features {
+    gap: var(--space-12);
+  }
+
+  /* Why Attend */
+  .numbered-list__item {
+    gap: var(--space-6);
+  }
+
+  .numbered-list__number {
+    width: 56px;
+    height: 56px;
+    font-size: var(--text-2xl);
+  }
+
+  /* Timeline */
+  .timeline__time {
+    width: 100px;
+  }
+
+  /* Footer */
+  .footer__main {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer__copyright {
+    text-align: left;
+  }
+
+  /* Ticker */
+  .ticker__item,
+  .ticker__separator {
+    font-size: 14px;
+  }
+
+  /* Blogs */
+  .blog-card {
+    flex: 0 0 300px;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Desktop (1024px+)
+   ------------------------------------------------------------------------- */
+
+@media (min-width: 1024px) {
+  /* Container */
+  :root {
+    --container-padding: var(--space-8);
+  }
+
+  /* Navbar */
+  .navbar__nav-list {
+    gap: var(--space-8);
+  }
+
+  /* Hero */
+  .hero__title {
+    font-size: var(--text-4xl);
+  }
+
+  .hero__inner {
+    gap: var(--space-12);
+  }
+
+  .hero__content {
+    max-width: 580px;
+  }
+
+  .hero__visual {
+    width: 440px;
+  }
+
+  /* Cards Grid */
+  .upcoming-events__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Features */
+  .what-is__features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Section Headers */
+  .section-header {
+    margin-bottom: var(--space-16);
+  }
+
+  /* Blogs - show 4 cards nicely */
+  .blog-card {
+    flex: 0 0 280px;
+  }
+
+  .blogs-section__grid {
+    justify-content: center;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Large Desktop (1280px+)
+   ------------------------------------------------------------------------- */
+
+@media (min-width: 1280px) {
+  /* Hero */
+  .hero__inner {
+    gap: var(--space-16);
+  }
+
+  .hero__visual {
+    max-width: 520px;
+  }
+
+  /* Event Cards */
+  .event-card {
+    padding: var(--space-8);
+  }
+
+  /* Features */
+  .feature {
+    padding: var(--space-8);
+  }
+
+  /* Limited Spots Screen */
+  .limited-spots__screen {
+    padding: var(--space-12) var(--space-10);
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Print Styles
+   ------------------------------------------------------------------------- */
+
+@media print {
+  .navbar,
+  .mobile-menu,
+  .btn,
+  .footer__social {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 0;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Utility: Hide on specific breakpoints
+   ------------------------------------------------------------------------- */
+
+.hide-mobile {
+  display: none;
+}
+
+.hide-desktop {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .hide-mobile {
+    display: block;
+  }
+
+  .hide-desktop {
+    display: none;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Safe Area (for notched phones)
+   ------------------------------------------------------------------------- */
+
+@supports (padding: max(0px)) {
+  .navbar {
+    padding-left: max(var(--space-4), env(safe-area-inset-left));
+    padding-right: max(var(--space-4), env(safe-area-inset-right));
+  }
+
+  .footer {
+    padding-bottom: max(var(--space-6), env(safe-area-inset-bottom));
+  }
+}

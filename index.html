@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="es" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cafecito Tech - El primer networking de tecnología para latinos en Charlotte. Conversaciones reales sobre tech, en español, con un cafecito en mano.">
+  <meta name="keywords" content="networking, tecnología, latinos, Charlotte, comunidad, tech, español, IA, inteligencia artificial">
+  <meta name="author" content="Link Foundation">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cafecitotech.com/">
+  <meta property="og:title" content="Cafecito Tech - Networking de Tecnología para Latinos en Charlotte">
+  <meta property="og:description" content="El primer networking de tecnología para latinos en Charlotte. Conversaciones reales, en español, sin presión.">
+  <meta property="og:image" content="assets/images/Flyer.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cafecito Tech - Networking de Tecnología para Latinos">
+  <meta name="twitter:description" content="El primer networking de tecnología para latinos en Charlotte.">
+  <meta name="twitter:image" content="assets/images/Flyer.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <title>Cafecito Tech - El primer networking de tecnología para latinos en Charlotte</title>
+
+  <!-- Schema.org Event Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Cafecito Tech - Session #1: La IA está aquí",
+    "description": "El primer networking de tecnología para latinos en Charlotte. Conversaciones reales sobre tech, en español.",
+    "startDate": "2025-03-07T10:00:00-05:00",
+    "endDate": "2025-03-07T12:00:00-05:00",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Charlotte, NC",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Charlotte",
+        "addressRegion": "NC",
+        "addressCountry": "US"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Link Foundation",
+      "url": "https://linkfoundation.io"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/LimitedAvailability",
+      "url": "https://lu.ma/7b6ykm3k"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#" class="navbar__logo">
+        <span class="navbar__logo-icon">☕</span>
+        <span>Cafecito Tech</span>
+      </a>
+
+      <nav class="navbar__nav" aria-label="Navegación principal">
+        <ul class="navbar__nav-list" role="list">
+          <li><a href="#que-es" class="navbar__nav-link" data-i18n="nav.whatis">Qué es</a></li>
+          <li><a href="#por-que" class="navbar__nav-link" data-i18n="nav.why">Por qué ir</a></li>
+          <li><a href="#agenda" class="navbar__nav-link" data-i18n="nav.agenda">Agenda</a></li>
+          <li><a href="#eventos" class="navbar__nav-link" data-i18n="nav.events">Eventos</a></li>
+        </ul>
+      </nav>
+
+      <div class="navbar__actions">
+        <button class="lang-toggle" id="lang-toggle" aria-label="Change language">
+          <span class="lang-toggle__current">ES</span>
+          <span class="lang-toggle__divider">/</span>
+          <span class="lang-toggle__other">EN</span>
+        </button>
+        <a href="https://lu.ma/7b6ykm3k" target="_blank" rel="noopener" class="btn btn--primary btn--sm navbar__cta" data-i18n="nav.cta">
+          Reserva tu lugar
+        </a>
+        <button class="navbar__menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <button class="mobile-menu__close" id="menu-close" aria-label="Cerrar menú">✕</button>
+    <ul class="mobile-menu__nav" role="list">
+      <li><a href="#que-es" class="mobile-menu__link" data-i18n="nav.whatis">Qué es</a></li>
+      <li><a href="#por-que" class="mobile-menu__link" data-i18n="nav.why">Por qué ir</a></li>
+      <li><a href="#agenda" class="mobile-menu__link" data-i18n="nav.agenda">Agenda</a></li>
+      <li><a href="#eventos" class="mobile-menu__link" data-i18n="nav.events">Eventos</a></li>
+      <li><a href="#para-ti" class="mobile-menu__link" data-i18n="nav.foryou">Es para ti</a></li>
+    </ul>
+    <div class="mobile-menu__cta">
+      <a href="https://lu.ma/7b6ykm3k" target="_blank" rel="noopener" class="btn btn--primary btn--lg" data-i18n="cta.reserve">
+        Reserva tu lugar gratis
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="hero">
+      <div class="container hero__inner">
+        <div class="hero__content fade-up">
+          <div class="hero__logo">
+            <span class="hero__logo-icon">☕</span>
+            <span>Cafecito Tech</span>
+          </div>
+          <h1 class="hero__title" data-i18n="hero.title" data-i18n-html="true">
+            El primer <span class="hero__title-highlight">networking</span> de tecnología para latinos en Charlotte
+          </h1>
+          <p class="hero__subtitle" data-i18n="hero.subtitle">
+            Conversaciones reales sobre tech, en español, con un cafecito en mano. Sin presión, sin tecnicismos, solo comunidad.
+          </p>
+          <div class="hero__ctas">
+            <a href="https://lu.ma/7b6ykm3k" target="_blank" rel="noopener" class="btn btn--primary btn--lg" data-i18n="cta.reserve">
+              Reserva tu lugar gratis
+            </a>
+            <a href="#eventos" class="btn btn--secondary btn--lg" data-i18n="cta.viewEvents">
+              Ver próximos eventos
+            </a>
+          </div>
+
+          <!-- Next Event Info -->
+          <div class="hero__event">
+            <div class="next-event">
+              <div class="next-event__header">
+                <span class="next-event__badge" data-i18n="event.next">PRÓXIMO EVENTO</span>
+              </div>
+              <h2 class="next-event__title" data-i18n="event.session1.title">Session #1: La IA está aquí</h2>
+              <div class="next-event__details">
+                <div class="next-event__detail">
+                  <span class="next-event__detail-icon">📅</span>
+                  <span data-i18n="event.session1.date">Sábado, 7 de Marzo 2025</span>
+                </div>
+                <div class="next-event__detail">
+                  <span class="next-event__detail-icon">🕙</span>
+                  <span>10:00 AM - 12:00 PM</span>
+                </div>
+                <div class="next-event__detail">
+                  <span class="next-event__detail-icon">📍</span>
+                  <span>Charlotte, NC</span>
+                </div>
+              </div>
+              <a href="https://lu.ma/7b6ykm3k" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="cta.register">
+                Registrarme ahora
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual - The Flyer Image -->
+        <div class="hero__visual fade-up">
+          <img
+            src="assets/images/hero-mac.png"
+            alt="Cafecito Tech - Macintosh SE vintage con pantalla CRT mostrando Loading Comunidad y temas de tecnología, junto a una taza de café"
+            class="hero__image"
+            loading="eager"
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TICKER/MARQUEE ========== -->
+    <section class="ticker-section">
+      <div class="ticker-wrapper">
+        <div class="ticker">
+          <div class="ticker__content">
+            <span class="ticker__item">🤖 AI for Social Good</span>
+            <span class="ticker__separator">/</span>
+            <span class="ticker__item">₿ Bitcoin & Crypto</span>
+            <span class="ticker__separator">/</span>
+            <span class="ticker__item">⚙️ Automatización</span>
+            <span class="ticker__separator">/</span>
+            <span class="ticker__item">🔗 Descentralización</span>
+            <span class="ticker__separator">/</span>
+            <span class="ticker__item">🌐 Cultura Tech</span>
+            <span class="ticker__separator">/</span>
+            <span class="ticker__item">🧠 AI</span>
+            <span class="ticker__separator">/</span>
+            <span class="ticker__item">💡 Machine Learning</span>
+            <span class="ticker__separator">/</span>
+            <span class="ticker__item">📊 Digital Gap</span>
+            <span class="ticker__separator">/</span>
+            <span class="ticker__item">🎯 Critical Thinking</span>
+            <span class="ticker__separator">/</span>
+            <span class="ticker__item">⚖️ AI Ethics</span>
+            <span class="ticker__separator">/</span>
+          </div>
+          <!-- Duplicate for seamless loop -->
+          <div class="ticker__content" aria-hidden="true">
+            <span class="ticker__item">🤖 AI for Social Good</span>
+            <span class="ticker__separator">/</span>
+            <span class="ticker__item">₿ Bitcoin & Crypto</span>
+            <span class="ticker__separator">/</span>
+            <span class="ticker__item">⚙️ Automatización</span>
+            <span class="ticker__separator">/</span>
+            <span class="ticker__item">🔗 Descentralización</span>
+            <span class="ticker__separator">/</span>
+            <span class="ticker__item">🌐 Cultura Tech</span>
+            <span class="ticker__separator">/</span>
+            <span class="ticker__item">🧠 AI</span>
+            <span class="ticker__separator">/</span>
+            <span class="ticker__item">💡 Machine Learning</span>
+            <span class="ticker__separator">/</span>
+            <span class="ticker__item">📊 Digital Gap</span>
+            <span class="ticker__separator">/</span>
+            <span class="ticker__item">🎯 Critical Thinking</span>
+            <span class="ticker__separator">/</span>
+            <span class="ticker__item">⚖️ AI Ethics</span>
+            <span class="ticker__separator">/</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== QUÉ ES SECTION ========== -->
+    <section class="what-is" id="que-es">
+      <div class="container">
+        <header class="section-header fade-up">
+          <span class="section-header__eyebrow" data-i18n="whatis.eyebrow">¿Qué es?</span>
+          <h2 class="section-header__title" data-i18n="whatis.title">Un espacio para conversar sobre tecnología en español</h2>
+          <p class="section-header__description" data-i18n="whatis.description">
+            Cafecito Tech es un encuentro casual creado para conversar sobre las tecnologías que están transformando el mundo y navegar esta transición tecnológica juntos.
+          </p>
+        </header>
+
+        <div class="what-is__features stagger-children">
+          <div class="feature">
+            <div class="feature__icon">☕</div>
+            <h3 class="feature__title" data-i18n="whatis.feature1.title">Café + Amigos</h3>
+            <p class="feature__description" data-i18n="whatis.feature1.desc">
+              Un ambiente relajado donde las conversaciones fluyen naturalmente, como cuando te juntas con amigos.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature__icon">🗣️</div>
+            <h3 class="feature__title" data-i18n="whatis.feature2.title">En Español</h3>
+            <p class="feature__description" data-i18n="whatis.feature2.desc">
+              Tecnología explicada en tu idioma. Sin barreras de lenguaje, sin tecnicismos innecesarios.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature__icon">🤝</div>
+            <h3 class="feature__title" data-i18n="whatis.feature3.title">Comunidad Real</h3>
+            <p class="feature__description" data-i18n="whatis.feature3.desc">
+              Conexiones genuinas con otros latinos en tech. Networking sin el ambiente corporativo frío.
+            </p>
+          </div>
+        </div>
+
+        <blockquote class="quote what-is__quote fade-up" data-i18n="whatis.quote">
+          Aquí no vienes solo a escuchar una charla, vienes a hacer nuevas conexiones, compartir ideas, y conversar sobre tecnología en tu idioma.
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ========== POR QUÉ IR SECTION ========== -->
+    <section class="why-attend" id="por-que">
+      <div class="container">
+        <header class="section-header fade-up">
+          <span class="section-header__eyebrow" data-i18n="why.eyebrow">¿Por qué ir?</span>
+          <h2 class="section-header__title" data-i18n="why.title">3 razones para unirte</h2>
+        </header>
+
+        <div class="why-attend__list numbered-list stagger-children">
+          <div class="numbered-list__item">
+            <div class="numbered-list__number">1</div>
+            <div class="numbered-list__content">
+              <h3 class="numbered-list__title" data-i18n="why.reason1.title">Conversaciones reales sobre tecnología</h3>
+              <p class="numbered-list__description" data-i18n="why.reason1.desc">
+                Hablamos de IA, automatización, herramientas y tendencias de una manera práctica. Todo en español, sin el hype vacío que ves en redes.
+              </p>
+            </div>
+          </div>
+
+          <div class="numbered-list__item">
+            <div class="numbered-list__number">2</div>
+            <div class="numbered-list__content">
+              <h3 class="numbered-list__title" data-i18n="why.reason2.title">Comunidad, no solo contenido</h3>
+              <p class="numbered-list__description" data-i18n="why.reason2.desc">
+                Las mejores oportunidades nacen de conexiones reales. Conoce a otros profesionales, emprendedores y curiosos que están navegando la misma transición que tú.
+              </p>
+            </div>
+          </div>
+
+          <div class="numbered-list__item">
+            <div class="numbered-list__number">3</div>
+            <div class="numbered-list__content">
+              <h3 class="numbered-list__title" data-i18n="why.reason3.title">Ideas aplicables para tu carrera o negocio</h3>
+              <p class="numbered-list__description" data-i18n="why.reason3.desc">
+                No es teoría abstracta. Compartimos herramientas, casos de uso y experiencias que puedes aplicar desde el lunes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== QUÉ ESPERAR SECTION ========== -->
+    <section class="what-expect" id="agenda">
+      <div class="container">
+        <header class="section-header fade-up">
+          <span class="section-header__eyebrow" data-i18n="agenda.eyebrow">¿Qué esperar?</span>
+          <h2 class="section-header__title" data-i18n="agenda.title">Estructura del evento</h2>
+          <p class="section-header__description" data-i18n="agenda.description">
+            Cada sesión dura aproximadamente 2 horas con un formato diseñado para maximizar las conexiones.
+          </p>
+        </header>
+
+        <div class="what-expect__timeline timeline fade-up">
+          <div class="timeline__item">
+            <div class="timeline__time">10:00 AM</div>
+            <div class="timeline__content">
+              <h3 class="timeline__title" data-i18n="agenda.item1.title">☕ Llegada + Cafecito</h3>
+              <p class="timeline__description" data-i18n="agenda.item1.desc">
+                Llega, agarra tu café y empieza a conocer gente. Sin prisa, sin formalidades.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline__item">
+            <div class="timeline__time">10:30 AM</div>
+            <div class="timeline__content">
+              <h3 class="timeline__title" data-i18n="agenda.item2.title">🧠 Mini sesión práctica</h3>
+              <p class="timeline__description" data-i18n="agenda.item2.desc">
+                30 minutos de contenido enfocado en el tema del mes. Demos, casos de uso, herramientas que puedes usar.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline__item">
+            <div class="timeline__time">11:00 AM</div>
+            <div class="timeline__content">
+              <h3 class="timeline__title" data-i18n="agenda.item3.title">🤝 Networking + Conversación</h3>
+              <p class="timeline__description" data-i18n="agenda.item3.desc">
+                La parte más importante. Conecta con otros asistentes, comparte ideas, haz preguntas, encuentra colaboradores.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ES PARA TI SECTION ========== -->
+    <section class="for-you" id="para-ti">
+      <div class="container">
+        <header class="section-header fade-up">
+          <span class="section-header__eyebrow" data-i18n="foryou.eyebrow">¿Es para ti?</span>
+          <h2 class="section-header__title" data-i18n="foryou.title">Cafecito Tech es para ti si...</h2>
+        </header>
+
+        <div class="for-you__content fade-up">
+          <ul class="check-list for-you__list">
+            <li class="check-list__item">
+              <span class="check-list__icon">✓</span>
+              <span data-i18n="foryou.item1">Eres latino en Charlotte y te interesa la tecnología (aunque estés empezando)</span>
+            </li>
+            <li class="check-list__item">
+              <span class="check-list__icon">✓</span>
+              <span data-i18n="foryou.item2">Quieres aprender sobre IA, automatización y herramientas digitales en español</span>
+            </li>
+            <li class="check-list__item">
+              <span class="check-list__icon">✓</span>
+              <span data-i18n="foryou.item3">Buscas networking sin el ambiente corporativo frío</span>
+            </li>
+            <li class="check-list__item">
+              <span class="check-list__icon">✓</span>
+              <span data-i18n="foryou.item4">Quieres conocer gente construyendo cosas interesantes (tech, negocios, proyectos)</span>
+            </li>
+            <li class="check-list__item">
+              <span class="check-list__icon">✓</span>
+              <span data-i18n="foryou.item5">Quieres ser parte de algo más grande en tu ciudad</span>
+            </li>
+          </ul>
+
+          <div class="for-you__cta">
+            <p class="for-you__cta-text" data-i18n="foryou.cta">
+              Si te interesa la tecnología, este espacio es para ti.
+            </p>
+            <a href="https://lu.ma/7b6ykm3k" target="_blank" rel="noopener" class="btn btn--primary btn--lg" data-i18n="cta.reserve">
+              Reserva tu lugar gratis
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PRÓXIMOS EVENTOS SECTION ========== -->
+    <section class="upcoming-events" id="eventos">
+      <div class="container">
+        <header class="section-header fade-up">
+          <span class="section-header__eyebrow" data-i18n="events.eyebrow">Calendario</span>
+          <h2 class="section-header__title" data-i18n="events.title">Próximos eventos</h2>
+          <p class="section-header__description" data-i18n="events.description">
+            Primer sábado de cada mes. Reserva tu lugar con anticipación - los cupos son limitados.
+          </p>
+        </header>
+
+        <div class="upcoming-events__grid" id="events-grid">
+          <!-- Event Card 1 -->
+          <article class="event-card fade-up">
+            <span class="event-card__badge" data-i18n="event.session1.badge">7 DE MARZO</span>
+            <h3 class="event-card__title" data-i18n="event.session1.title">Session #1: La IA está aquí</h3>
+            <div class="event-card__meta">
+              <div class="event-card__meta-item">
+                <span>📅</span>
+                <span data-i18n="event.session1.date">Sábado, 7 de Marzo 2025</span>
+              </div>
+              <div class="event-card__meta-item">
+                <span>🕙</span>
+                <span>10:00 AM - 12:00 PM</span>
+              </div>
+              <div class="event-card__meta-item">
+                <span>📍</span>
+                <span>Charlotte, NC</span>
+              </div>
+            </div>
+            <p class="event-card__description" data-i18n="event.session1.desc">
+              Nuestro primer encuentro. Hablaremos sobre cómo la IA está cambiando todo y qué significa para ti.
+            </p>
+            <a href="https://lu.ma/7b6ykm3k" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="cta.registerArrow">
+              Registrarme →
+            </a>
+          </article>
+
+          <!-- Event Card 2 (Coming Soon) -->
+          <article class="event-card fade-up">
+            <span class="event-card__badge" data-i18n="event.session2.badge">ABRIL 2025</span>
+            <h3 class="event-card__title" data-i18n="event.session2.title">Session #2: Por anunciar</h3>
+            <div class="event-card__meta">
+              <div class="event-card__meta-item">
+                <span>📅</span>
+                <span data-i18n="event.session2.date">Sábado, 5 de Abril 2025</span>
+              </div>
+              <div class="event-card__meta-item">
+                <span>🕙</span>
+                <span>10:00 AM - 12:00 PM</span>
+              </div>
+              <div class="event-card__meta-item">
+                <span>📍</span>
+                <span>Charlotte, NC</span>
+              </div>
+            </div>
+            <p class="event-card__description" data-i18n="event.session2.desc">
+              El tema se anunciará pronto. Síguenos para enterarte primero.
+            </p>
+            <a href="https://lu.ma/7b6ykm3k" target="_blank" rel="noopener" class="btn btn--secondary" data-i18n="cta.viewCalendar">
+              Ver calendario →
+            </a>
+          </article>
+        </div>
+
+        <div class="upcoming-events__calendar fade-up">
+          <a href="https://lu.ma/7b6ykm3k" target="_blank" rel="noopener" class="btn btn--ghost" data-i18n="cta.fullCalendar">
+            📆 Ver calendario completo en Luma
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOUNDERS SECTION ========== -->
+    <section class="founders" id="fundadores">
+      <div class="container">
+        <header class="section-header fade-up">
+          <span class="section-header__eyebrow" data-i18n="founders.eyebrow">Quiénes somos</span>
+          <h2 class="section-header__title" data-i18n="founders.title">Los fundadores</h2>
+        </header>
+
+        <div class="founders__story fade-up">
+          <h3 class="founders__headline" data-i18n="founders.headline">Cafecito Tech nació de algo simple:</h3>
+          <p class="founders__text founders__text--lead" data-i18n="founders.lead">
+            queríamos un lugar para hablar entre amigos sobre AI y tecnología en nuestro idioma.
+          </p>
+          <p class="founders__text" data-i18n="founders.story1">
+            Somos un grupo de amigos latinos que trabajamos en la industria de la tecnología, la creatividad y el marketing, y sentíamos la falta de un espacio real para reunirnos, conversar, aprender juntos y construir comunidad.
+          </p>
+          <p class="founders__text" data-i18n="founders.story2" data-i18n-html="true">
+            <strong>Cafecito Tech</strong> nace como una iniciativa de los fundadores de <strong>Link Foundation</strong>, como parte de una misión mayor – cerrar la brecha tecnológica en nuestra comunidad.
+          </p>
+
+          <div class="founders__beliefs">
+            <p class="founders__beliefs-title" data-i18n="founders.believe">Creemos que:</p>
+            <ul class="founders__beliefs-list">
+              <li data-i18n="founders.belief1">El conocimiento no debería tener barrera de idioma</li>
+              <li data-i18n="founders.belief2">Las mejores oportunidades nacen de conexiones reales</li>
+              <li data-i18n="founders.belief3">Nuestra comunidad merece un espacio para hablar de tecnología en español</li>
+            </ul>
+          </div>
+
+          <p class="founders__text" data-i18n="founders.story3">
+            Creamos este evento para tener un espacio casual, para conocernos y hablar entre amigos sin la presión de tener que saberlo todo.
+          </p>
+          <p class="founders__text" data-i18n="founders.story4">
+            Un lugar para llegar, conversar, aprender juntos y construir comunidad.
+          </p>
+          <p class="founders__text" data-i18n="founders.story5">
+            Un espacio abierto para todos, sin importar si vienes del mundo corporativo, emprendedor, o si simplemente sientes curiosidad por el futuro de la tecnología y de la humanidad.
+          </p>
+        </div>
+
+        <div class="founders__photo fade-up">
+          <div class="founders__photo-frame">
+            <!-- Reemplazar con: <img src="assets/images/founders.jpg" alt="Los fundadores de Cafecito Tech"> -->
+            <div class="founders__photo-placeholder">
+              <span>Foto de los fundadores</span>
+            </div>
+          </div>
+          <p class="founders__photo-caption" data-i18n="founders.caption">Los fundadores de Cafecito Tech</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CUPOS LIMITADOS SECTION ========== -->
+    <section class="limited-spots">
+      <div class="container limited-spots__inner fade-up">
+        <div class="limited-spots__screen">
+          <div class="limited-spots__content">
+            <p class="limited-spots__prompt" data-i18n="limited.prompt">> Loading registro...</p>
+            <h2 class="limited-spots__title" data-i18n="limited.title">CUPOS LIMITADOS<span class="limited-spots__cursor"></span></h2>
+            <p class="limited-spots__description" data-i18n="limited.description">
+              Mantenemos cada sesión íntima para que las conversaciones sean de calidad. Reserva tu lugar ahora.
+            </p>
+            <a href="https://lu.ma/7b6ykm3k" target="_blank" rel="noopener" class="btn btn--primary btn--lg limited-spots__cta" data-i18n="cta.reserve">
+              Reserva tu lugar gratis
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== BLOGS SECTION ========== -->
+    <section class="blogs-section" id="blogs">
+      <div class="container">
+        <header class="section-header fade-up">
+          <span class="section-header__eyebrow" data-i18n="blogs.eyebrow">Aprende</span>
+          <h2 class="section-header__title" data-i18n="blogs.title">Aprende con Link Foundation</h2>
+          <p class="section-header__description" data-i18n="blogs.description">
+            Explora nuestros articulos sobre tecnologia, IA y el futuro digital
+          </p>
+        </header>
+
+        <div class="blogs-section__scroll-container">
+          <div class="blogs-section__grid">
+            <!-- Blog Card 1 -->
+            <article class="blog-card fade-up">
+              <div class="blog-card__image">
+                <span class="blog-card__image-placeholder">📊</span>
+              </div>
+              <div class="blog-card__content">
+                <span class="blog-card__date">08/01/2026</span>
+                <h3 class="blog-card__title" data-i18n="blogs.post1.title">What is the Latino digital gap?</h3>
+                <p class="blog-card__author" data-i18n="blogs.post1.author">Por William Suarez Mesa</p>
+                <a href="https://linkfoundation.io/post/2026-digital-gap" target="_blank" rel="noopener" class="blog-card__link" data-i18n="blogs.readMore">
+                  Leer articulo →
+                </a>
+              </div>
+            </article>
+
+            <!-- Blog Card 2 -->
+            <article class="blog-card fade-up">
+              <div class="blog-card__image">
+                <span class="blog-card__image-placeholder">🤖</span>
+              </div>
+              <div class="blog-card__content">
+                <span class="blog-card__date">10/12/2025</span>
+                <h3 class="blog-card__title" data-i18n="blogs.post2.title">In the age of enhanced creativity...</h3>
+                <p class="blog-card__author" data-i18n="blogs.post2.author">Por Luis Mata</p>
+                <a href="https://linkfoundation.io/post/human-vs-ai-creativity" target="_blank" rel="noopener" class="blog-card__link" data-i18n="blogs.readMore">
+                  Leer articulo →
+                </a>
+              </div>
+            </article>
+
+            <!-- Blog Card 3 -->
+            <article class="blog-card fade-up">
+              <div class="blog-card__image">
+                <span class="blog-card__image-placeholder">🧠</span>
+              </div>
+              <div class="blog-card__content">
+                <span class="blog-card__date">11/11/2025</span>
+                <h3 class="blog-card__title" data-i18n="blogs.post3.title">Critical Thinking: A Superpower...</h3>
+                <p class="blog-card__author" data-i18n="blogs.post3.author">Por Pedro Cordido</p>
+                <a href="https://linkfoundation.io/post/critical-thinking-key-to-mental-freedom" target="_blank" rel="noopener" class="blog-card__link" data-i18n="blogs.readMore">
+                  Leer articulo →
+                </a>
+              </div>
+            </article>
+
+            <!-- Blog Card 4 -->
+            <article class="blog-card fade-up">
+              <div class="blog-card__image">
+                <span class="blog-card__image-placeholder">⚖️</span>
+              </div>
+              <div class="blog-card__content">
+                <span class="blog-card__date">17/10/2025</span>
+                <h3 class="blog-card__title" data-i18n="blogs.post4.title">Why Access to AI Tools Is the New Civil Right?</h3>
+                <p class="blog-card__author" data-i18n="blogs.post4.author">Por Isabella Garcia</p>
+                <a href="https://linkfoundation.io/post/ai-access-as-civil-right" target="_blank" rel="noopener" class="blog-card__link" data-i18n="blogs.readMore">
+                  Leer articulo →
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="blogs-section__cta fade-up">
+          <a href="https://linkfoundation.io/blog" target="_blank" rel="noopener" class="btn btn--secondary btn--lg" data-i18n="blogs.viewAll">
+            Ver todos los articulos →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <!-- Link Foundation Block -->
+      <div class="footer__foundation-block">
+        <p class="footer__foundation-label" data-i18n="footer.initiative">Una iniciativa de</p>
+        <a href="https://linkfoundation.io" target="_blank" rel="noopener" class="footer__foundation-link">
+          <span class="footer__foundation-logo">🔗</span>
+          <span class="footer__foundation-name">Link Foundation</span>
+        </a>
+        <p class="footer__foundation-tagline">
+          Empowering the Latino Community Through Technology
+        </p>
+      </div>
+
+      <div class="footer__main">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <span class="footer__logo-icon">☕</span>
+            <span>Cafecito Tech</span>
+          </div>
+          <p class="footer__tagline" data-i18n="footer.tagline">
+            El primer networking de tecnología para latinos en Charlotte.
+          </p>
+        </div>
+
+        <div class="footer__links">
+          <a href="#que-es" class="footer__link" data-i18n="nav.whatis">Qué es</a>
+          <a href="#por-que" class="footer__link" data-i18n="nav.why">Por qué ir</a>
+          <a href="#agenda" class="footer__link" data-i18n="nav.agenda">Agenda</a>
+          <a href="#eventos" class="footer__link" data-i18n="nav.events">Eventos</a>
+          <a href="https://lu.ma/7b6ykm3k" target="_blank" rel="noopener" class="footer__link" data-i18n="footer.register">Registro</a>
+        </div>
+
+        <div class="footer__social">
+          <a href="https://instagram.com/cafecitotech" target="_blank" rel="noopener" class="footer__social-link" aria-label="Instagram">
+            📸
+          </a>
+          <a href="https://linkedin.com/company/linkfoundation" target="_blank" rel="noopener" class="footer__social-link" aria-label="LinkedIn">
+            💼
+          </a>
+          <a href="mailto:hola@linkfoundation.io" class="footer__social-link" aria-label="Email">
+            ✉️
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          © 2025 Cafecito Tech · <a href="https://linkfoundation.io" target="_blank" rel="noopener">Link Foundation</a>
+        </p>
+        <p data-i18n="footer.made">
+          Hecho con ☕ y 💚 en Charlotte, NC
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
