@@ -44,8 +44,8 @@
     "@type": "Event",
     "name": "Cafecito Tech - Session #1: La IA está aquí",
     "description": "El primer networking de tecnología para latinos en Charlotte. Conversaciones reales sobre tech, en español.",
-    "startDate": "2025-03-07T10:00:00-05:00",
-    "endDate": "2025-03-07T12:00:00-05:00",
+    "startDate": "2026-03-07T10:00:00-05:00",
+    "endDate": "2026-03-07T12:00:00-05:00",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "eventStatus": "https://schema.org/EventScheduled",
     "location": {
@@ -80,10 +80,7 @@
       <!-- Link Foundation Brand Only -->
       <div class="navbar__brand-group">
         <a href="https://linkfoundation.io" class="navbar__link-logo" title="Link Foundation">
-          <img src="assets/images/link-foundation-logo-white.svg" alt="Link Foundation" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <span class="navbar__link-name" style="display: flex; align-items: center; gap: 8px;">
-            <span style="font-size: 1.5em;">🔗</span> Link Foundation
-          </span>
+          <img src="assets/images/link-foundation-logo.png" alt="Link Foundation" style="height: 36px; width: auto;">
         </a>
       </div>
 
@@ -165,7 +162,7 @@
               <div class="next-event__details">
                 <div class="next-event__detail">
                   <span class="next-event__detail-icon">📅</span>
-                  <span data-i18n="event.session1.date">Sábado, 7 de Marzo 2025</span>
+                  <span data-i18n="event.session1.date">Sábado, 7 de Marzo 2026</span>
                 </div>
                 <div class="next-event__detail">
                   <span class="next-event__detail-icon">🕙</span>
@@ -186,8 +183,8 @@
         <!-- Hero Visual - The Flyer Image -->
         <div class="hero__visual fade-up">
           <img
-            src="assets/images/hero-mac.png"
-            alt="Cafecito Tech - Macintosh SE vintage con pantalla CRT mostrando Loading Comunidad y temas de tecnología, junto a una taza de café"
+            src="assets/images/Hero-Image.png"
+            alt="Cafecito Tech - El primer networking de tecnología para latinos en Charlotte"
             class="hero__image"
             loading="eager"
           >
@@ -554,94 +551,6 @@
       </div>
     </section>
 
-    <!-- ========== REGISTRO SECTION ========== -->
-    <section class="registro-section" id="registro">
-      <div class="container">
-        <div class="registro-section__inner fade-up">
-          <div class="registro-section__info">
-            <span class="registro-section__eyebrow">📅 7 de Marzo 2026 · 10:00 AM</span>
-            <h2 class="registro-section__title">Reserva tu lugar</h2>
-            <p class="registro-section__description">
-              Cupos limitados para mantener las conversaciones de calidad. 
-              <strong>Es gratis.</strong>
-            </p>
-            
-            <div class="registro-section__event-info">
-              <div class="registro-section__event-detail">
-                <span>🎯</span>
-                <span><strong>Tema:</strong> La Revolución IA</span>
-              </div>
-              <div class="registro-section__event-detail">
-                <span>🏆</span>
-                <span><strong>Aprenderás:</strong> Construir tu primer agente de IA en 30 min</span>
-              </div>
-              <div class="registro-section__event-detail">
-                <span>📍</span>
-                <span><strong>Lugar:</strong> Charlotte, NC (ubicación exacta por confirmar)</span>
-              </div>
-            </div>
-
-            <ul class="registro-section__benefits">
-              <li>✓ Confirmaremos tu lugar por email</li>
-              <li>✓ Te enviaremos la ubicación exacta</li>
-              <li>✓ Recibirás recordatorio 24h antes</li>
-            </ul>
-          </div>
-
-          <div class="registro-section__form-container">
-            <form class="registro-form" id="registro-form">
-              <div class="registro-form__group">
-                <label for="firstName" class="registro-form__label">Nombre *</label>
-                <input type="text" id="firstName" name="firstName" required class="registro-form__input" placeholder="Tu nombre">
-              </div>
-
-              <div class="registro-form__group">
-                <label for="lastName" class="registro-form__label">Apellido *</label>
-                <input type="text" id="lastName" name="lastName" required class="registro-form__input" placeholder="Tu apellido">
-              </div>
-
-              <div class="registro-form__group">
-                <label for="email" class="registro-form__label">Email *</label>
-                <input type="email" id="email" name="email" required class="registro-form__input" placeholder="tu@email.com">
-              </div>
-
-              <div class="registro-form__group">
-                <label for="phone" class="registro-form__label">Teléfono (opcional)</label>
-                <input type="tel" id="phone" name="phone" class="registro-form__input" placeholder="+1 (704) 555-0123">
-              </div>
-
-              <div class="registro-form__group">
-                <label for="perfil" class="registro-form__label">¿Cómo te describes? (opcional)</label>
-                <select id="perfil" name="perfil" class="registro-form__select">
-                  <option value="">Selecciona una opción</option>
-                  <option value="entrepreneur">Entrepreneur / Dueño de negocio</option>
-                  <option value="freelancer">Freelancer</option>
-                  <option value="tech-professional">Profesional en tecnología</option>
-                  <option value="marketer">Marketer / Creador</option>
-                  <option value="curious">Curioso / Aprendiendo</option>
-                </select>
-              </div>
-
-              <button type="submit" class="btn btn--primary btn--lg registro-form__submit">
-                🎟️ Reservar mi lugar gratis
-              </button>
-
-              <p class="registro-form__footer">
-                Una iniciativa de <a href="https://linkfoundation.io" target="_blank">Link Foundation</a>
-              </p>
-            </form>
-
-            <!-- Success message (hidden by default) -->
-            <div class="registro-form__success" id="registro-success" style="display: none;">
-              <span class="registro-form__success-icon">🎉</span>
-              <h3>¡Listo! Tu lugar está reservado</h3>
-              <p>Revisa tu email para la confirmación. ¡Nos vemos el 7 de marzo!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ========== BLOGS SECTION ========== -->
     <section class="blogs-section" id="blogs">
       <div class="container">
@@ -676,7 +585,7 @@
                 <span class="blog-card__image-placeholder">🤖</span>
               </div>
               <div class="blog-card__content">
-                <span class="blog-card__date">10/12/2025</span>
+                <span class="blog-card__date">10/12/2026</span>
                 <h3 class="blog-card__title" data-i18n="blogs.post2.title">In the age of enhanced creativity...</h3>
                 <p class="blog-card__author" data-i18n="blogs.post2.author">Por Luis Mata</p>
                 <a href="https://linkfoundation.io/post/human-vs-ai-creativity" target="_blank" rel="noopener" class="blog-card__link" data-i18n="blogs.readMore">
@@ -691,7 +600,7 @@
                 <span class="blog-card__image-placeholder">🧠</span>
               </div>
               <div class="blog-card__content">
-                <span class="blog-card__date">11/11/2025</span>
+                <span class="blog-card__date">11/11/2026</span>
                 <h3 class="blog-card__title" data-i18n="blogs.post3.title">Critical Thinking: A Superpower...</h3>
                 <p class="blog-card__author" data-i18n="blogs.post3.author">Por Pedro Cordido</p>
                 <a href="https://linkfoundation.io/post/critical-thinking-key-to-mental-freedom" target="_blank" rel="noopener" class="blog-card__link" data-i18n="blogs.readMore">
@@ -706,7 +615,7 @@
                 <span class="blog-card__image-placeholder">⚖️</span>
               </div>
               <div class="blog-card__content">
-                <span class="blog-card__date">17/10/2025</span>
+                <span class="blog-card__date">17/10/2026</span>
                 <h3 class="blog-card__title" data-i18n="blogs.post4.title">Why Access to AI Tools Is the New Civil Right?</h3>
                 <p class="blog-card__author" data-i18n="blogs.post4.author">Por Isabella Garcia</p>
                 <a href="https://linkfoundation.io/post/ai-access-as-civil-right" target="_blank" rel="noopener" class="blog-card__link" data-i18n="blogs.readMore">
@@ -775,7 +684,7 @@
 
       <div class="footer__bottom">
         <p class="footer__copyright">
-          © 2025 Cafecito Tech · <a href="https://linkfoundation.io" target="_blank" rel="noopener">Link Foundation</a>
+          © 2026 Cafecito Tech · <a href="https://linkfoundation.io" target="_blank" rel="noopener">Link Foundation</a>
         </p>
         <p data-i18n="footer.made">
           Hecho con ☕ y 💚 en Charlotte, NC

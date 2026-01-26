@@ -361,7 +361,7 @@
    ------------------------------------------------------------------------- */
 
 .ticker-section {
-  background-color: #000000;
+  background-color: var(--color-link-blue);
   padding: var(--space-3) 0;
   overflow: hidden;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
