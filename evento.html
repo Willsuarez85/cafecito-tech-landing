@@ -55,7 +55,7 @@
     }
     
     .header__logo img {
-      height: 28px;
+      height: 40px;
       width: auto;
     }
     
@@ -96,7 +96,7 @@
     
     /* Event Content */
     .event-content {
-      order: 2;
+      order: 1;
     }
     
     @media (min-width: 768px) {
@@ -292,19 +292,21 @@
     
     /* Registration Card */
     .registration-card {
-      order: 1;
+      order: 2;
       background: var(--color-white);
       border-radius: 12px;
       padding: 1.5rem;
       border: 1px solid var(--color-gray-200);
       box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 80px;
       height: fit-content;
     }
     
     @media (min-width: 768px) {
-      .registration-card { order: 2; }
+      .registration-card { 
+        order: 2;
+        position: sticky;
+        top: 80px;
+      }
     }
     
     .registration-card__title {
@@ -553,25 +555,25 @@
     <!-- Registration Card -->
     <div class="registration-card">
       <div id="registration-form">
-        <h3 class="registration-card__title" data-i18n="registerTitle">Registration</h3>
-        <p class="registration-card__subtitle" data-i18n="registerSubtitle">Welcome! To join the event, please register below.</p>
+        <h3 class="registration-card__title" data-i18n="registerTitle">🎟️ Reserva tu entrada</h3>
+        <p class="registration-card__subtitle" data-i18n="registerSubtitle">Aparta tu lugar para el próximo Cafecito Tech. ¡Cupos limitados!</p>
         
         <form id="evento-form" onsubmit="handleSubmit(event)">
           <div class="form-group">
-            <label class="form-label" for="nombre" data-i18n="labelName">Name *</label>
-            <input type="text" id="nombre" name="nombre" required class="form-input" data-i18n-placeholder="placeholderName" placeholder="Your full name">
+            <label class="form-label" for="nombre" data-i18n="labelName">Nombre *</label>
+            <input type="text" id="nombre" name="nombre" required class="form-input" data-i18n-placeholder="placeholderName" placeholder="Tu nombre completo">
           </div>
           
           <div class="form-group">
             <label class="form-label" for="email">Email *</label>
-            <input type="email" id="email" name="email" required class="form-input" placeholder="you@email.com">
+            <input type="email" id="email" name="email" required class="form-input" placeholder="tu@email.com">
           </div>
           
-          <button type="submit" class="btn-register" data-i18n="btnRegister">Register</button>
+          <button type="submit" class="btn-register" data-i18n="btnRegister">🎟️ Reservar mi lugar gratis</button>
         </form>
         
         <p class="registration-card__footer" data-i18n="footerNote">
-          We'll send you confirmation and details by email.
+          Te enviaremos la confirmación y detalles por email.
         </p>
       </div>
       
@@ -599,11 +601,11 @@
         month: 'MAR',
         fullDate: 'Sábado, 7 de Marzo 2026',
         aboutTitle: 'Acerca del Evento',
-        registerTitle: 'Registro',
-        registerSubtitle: '¡Bienvenido! Para unirte al evento, regístrate abajo.',
+        registerTitle: '🎟️ Reserva tu entrada',
+        registerSubtitle: 'Aparta tu lugar para el próximo Cafecito Tech. ¡Cupos limitados!',
         labelName: 'Nombre *',
         placeholderName: 'Tu nombre completo',
-        btnRegister: 'Registrarme',
+        btnRegister: '🎟️ Reservar mi lugar gratis',
         footerNote: 'Te enviaremos la confirmación y detalles por email.',
         successTitle: '¡Estás registrado!',
         successText: 'Revisa tu email para la confirmación. ¡Nos vemos el 7 de marzo!',
@@ -614,11 +616,11 @@
         month: 'MAR',
         fullDate: 'Saturday, March 7, 2026',
         aboutTitle: 'About Event',
-        registerTitle: 'Registration',
-        registerSubtitle: 'Welcome! To join the event, please register below.',
+        registerTitle: '🎟️ Reserve your spot',
+        registerSubtitle: 'Save your seat for the next Cafecito Tech. Limited spots!',
         labelName: 'Name *',
         placeholderName: 'Your full name',
-        btnRegister: 'Register',
+        btnRegister: '🎟️ Reserve my free spot',
         footerNote: 'We\'ll send you confirmation and details by email.',
         successTitle: 'You\'re registered!',
         successText: 'Check your email for confirmation. See you on March 7!',
