@@ -45,14 +45,15 @@
 
 /* Primary Button - Link Foundation Orange */
 .btn--primary {
-  background-color: var(--color-primary);
+  background-color: var(--color-link-orange);
   color: var(--color-white);
-  box-shadow: 0 4px 14px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 4px 14px rgba(245, 148, 32, 0.3);
+  border: none;
 }
 
 .btn--primary:hover {
-  background-color: var(--color-primary-dark);
-  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+  background-color: var(--color-link-orange-dark);
+  box-shadow: 0 6px 20px rgba(245, 148, 32, 0.4);
   transform: translateY(-2px);
 }
 
@@ -63,19 +64,19 @@
 /* Secondary Button - Outline */
 .btn--secondary {
   background-color: transparent;
-  color: var(--color-brown);
-  border: 2px solid var(--color-brown-light);
+  color: var(--color-link-blue);
+  border: 2px solid var(--color-link-blue);
 }
 
 .btn--secondary:hover {
-  border-color: var(--color-brown);
-  background-color: var(--color-cream);
+  border-color: var(--color-link-blue);
+  background-color: var(--color-gray-100);
 }
 
 /* Dark theme secondary */
 .theme-dark .btn--secondary {
-  color: var(--color-cream);
-  border-color: var(--color-gray-500);
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .theme-dark .btn--secondary:hover {

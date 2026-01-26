@@ -1,58 +1,45 @@
 /* ==========================================================================
    Cafecito Tech - Design Tokens
-   Extracted from: Flyer.png (Retro Futuro Latino aesthetic)
+   Updated: Link Foundation Brand Colors
    ========================================================================== */
 
 :root {
   /* -------------------------------------------------------------------------
-     Color Palette
+     Link Foundation Brand Colors
      ------------------------------------------------------------------------- */
 
-  /* Primary Colors - Warm/Cream Base (from flyer) */
-  --color-cream: #F4EEE1;
-  --color-cream-dark: #E6DFD0;
-  --color-cream-light: #FAF7F0;
+  /* Primary Brand Colors */
+  --color-link-blue: #051d36;
+  --color-link-blue-light: #0a2d4d;
+  --color-link-orange: #f59420;
+  --color-link-orange-dark: #d97f15;
+  --color-link-orange-light: #ffa940;
 
   /* Neutral Colors */
-  --color-black: #1A1A1A;
-  --color-gray-900: #2D2D2D;
-  --color-gray-700: #4A4A4A;
-  --color-gray-500: #6B6B6B;
-  --color-gray-300: #A0A0A0;
-  --color-gray-100: #E5E5E5;
-  --color-white: #FFFFFF;
+  --color-white: #ffffff;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e4e4e4;
+  --color-gray-300: #d1d1d1;
+  --color-gray-400: #a0a0a0;
+  --color-gray-500: #6b6b6b;
+  --color-gray-600: #4a4a4a;
+  --color-gray-700: #2d2d2d;
+  --color-black: #1a1a1a;
 
-  /* Accent Colors - Earth Tones (from flyer) */
-  --color-brown: #5C4A3A;
-  --color-brown-dark: #3D3129;
-  --color-brown-light: #8B7355;
-  --color-terracotta: #B86B4A;
-
-  /* Link Foundation Brand Colors */
-  --color-link-orange: #FF6B35;
-  --color-link-orange-dark: #E55A2B;
-  --color-link-orange-light: #FF8555;
-  --color-link-blue: #1E3A5F;
-  
-  /* CRT Green - Retro Tech (keeping for decorative elements) */
-  --color-crt-green: #33FF33;
-  --color-crt-green-dim: #22CC22;
-  --color-crt-green-glow: rgba(51, 255, 51, 0.3);
-  --color-crt-bg: #1A2A1A;
-  --color-crt-bg-light: #243524;
-  
-  /* Primary Action Color - Link Foundation Orange */
+  /* Semantic Colors */
   --color-primary: var(--color-link-orange);
   --color-primary-dark: var(--color-link-orange-dark);
   --color-primary-light: var(--color-link-orange-light);
-
-  /* Semantic Colors */
-  --color-success: var(--color-crt-green);
-  --color-warning: var(--color-terracotta);
+  
   --color-text-primary: var(--color-black);
-  --color-text-secondary: var(--color-gray-700);
+  --color-text-secondary: var(--color-gray-600);
   --color-text-muted: var(--color-gray-500);
-  --color-background: var(--color-cream);
+  --color-text-on-dark: var(--color-white);
+  --color-text-accent: var(--color-link-blue);
+  
+  --color-background: var(--color-white);
+  --color-background-alt: var(--color-gray-100);
+  --color-background-gray: var(--color-gray-200);
   --color-surface: var(--color-white);
 
   /* -------------------------------------------------------------------------
@@ -98,19 +85,19 @@
      Spacing
      ------------------------------------------------------------------------- */
 
-  --space-1: 0.25rem;   /* 4px */
-  --space-2: 0.5rem;    /* 8px */
-  --space-3: 0.75rem;   /* 12px */
-  --space-4: 1rem;      /* 16px */
-  --space-5: 1.25rem;   /* 20px */
-  --space-6: 1.5rem;    /* 24px */
-  --space-8: 2rem;      /* 32px */
-  --space-10: 2.5rem;   /* 40px */
-  --space-12: 3rem;     /* 48px */
-  --space-16: 4rem;     /* 64px */
-  --space-20: 5rem;     /* 80px */
-  --space-24: 6rem;     /* 96px */
-  --space-32: 8rem;     /* 128px */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
 
   /* Section Spacing */
   --section-padding-y: clamp(4rem, 8vw, 8rem);
@@ -140,7 +127,6 @@
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  --shadow-crt: 0 0 20px var(--color-crt-green-glow), 0 0 40px var(--color-crt-green-glow);
 
   /* -------------------------------------------------------------------------
      Transitions
@@ -163,12 +149,4 @@
   --z-modal: 500;
   --z-popover: 600;
   --z-tooltip: 700;
-}
-
-/* Dark mode variables (for CRT sections) */
-.theme-dark {
-  --color-text-primary: var(--color-cream);
-  --color-text-secondary: var(--color-gray-300);
-  --color-background: var(--color-crt-bg);
-  --color-surface: var(--color-crt-bg-light);
 }
