@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Cafecito Tech #1: La IA está aquí - El primer networking de tecnología para latinos en Charlotte">
-  <title>Cafecito Tech #1: La IA está aquí</title>
+  <title>Cafecito Tech #1 · Link Foundation</title>
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,154 +19,215 @@
       --color-link-blue: #051d36;
       --color-link-orange: #f59420;
       --color-white: #ffffff;
+      --color-gray-50: #fafafa;
       --color-gray-100: #f5f5f5;
       --color-gray-200: #e4e4e4;
+      --color-gray-400: #a0a0a0;
       --color-gray-500: #6b6b6b;
+      --color-gray-700: #374151;
       --color-black: #1a1a1a;
     }
     
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--color-gray-100);
+      background-color: var(--color-gray-50);
       color: var(--color-black);
-      min-height: 100vh;
-    }
-    
-    .event-page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      line-height: 1.6;
     }
     
     /* Header */
-    .event-header {
-      background-color: var(--color-link-blue);
-      padding: 1rem;
-      text-align: center;
+    .header {
+      background: var(--color-link-blue);
+      padding: 0.75rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
     
-    .event-header__logo {
-      color: var(--color-white);
-      text-decoration: none;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 1.25rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    
-    /* Main Content */
-    .event-main {
-      flex: 1;
+    .header__inner {
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
-      justify-content: center;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .header__logo img {
+      height: 28px;
+      width: auto;
+    }
+    
+    .header__actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .lang-btn {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+    
+    .lang-btn:hover { background: rgba(255,255,255,0.2); }
+    
+    /* Main Layout */
+    .main {
+      max-width: 900px;
+      margin: 0 auto;
       padding: 2rem 1rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
     
-    .event-card {
-      background: var(--color-white);
-      border-radius: 1rem;
-      max-width: 480px;
-      width: 100%;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    }
-    
-    /* Event Image */
-    .event-card__image {
-      width: 100%;
-      height: 200px;
-      background: linear-gradient(135deg, var(--color-link-blue) 0%, #0a3d6e 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-    
-    .event-card__image-content {
-      text-align: center;
-      color: var(--color-white);
-      padding: 1.5rem;
-    }
-    
-    .event-card__image-icon {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .event-card__image-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
+    @media (min-width: 768px) {
+      .main {
+        grid-template-columns: 1fr 340px;
+        padding: 2rem;
+      }
     }
     
     /* Event Content */
-    .event-card__content {
-      padding: 1.5rem;
+    .event-content {
+      order: 2;
     }
     
-    .event-card__badge {
-      display: inline-block;
-      background: var(--color-link-orange);
-      color: var(--color-white);
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 0.25rem 0.75rem;
-      border-radius: 2rem;
-      margin-bottom: 1rem;
+    @media (min-width: 768px) {
+      .event-content { order: 1; }
     }
     
-    .event-card__title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--color-link-blue);
-      margin-bottom: 0.5rem;
-      line-height: 1.3;
-    }
-    
-    .event-card__subtitle {
-      font-size: 1rem;
-      color: var(--color-gray-500);
+    .event-cover {
+      border-radius: 12px;
+      overflow: hidden;
       margin-bottom: 1.5rem;
-      line-height: 1.5;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
     
-    .event-card__meta {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      background: var(--color-gray-100);
-      border-radius: 0.75rem;
+    .event-cover img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
     
-    .event-card__meta-item {
+    .event-host {
       display: flex;
       align-items: center;
       gap: 0.75rem;
+      margin-bottom: 1rem;
       font-size: 0.9rem;
+      color: var(--color-gray-500);
     }
     
-    .event-card__meta-icon {
+    .event-host__avatar {
+      width: 32px;
+      height: 32px;
+      background: var(--color-link-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.8rem;
+    }
+    
+    .event-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--color-link-blue);
+      margin-bottom: 1rem;
+    }
+    
+    .event-datetime {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem;
+      background: var(--color-white);
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      border: 1px solid var(--color-gray-200);
+    }
+    
+    .event-datetime__icon {
+      width: 48px;
+      height: 48px;
+      background: var(--color-link-orange);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+    }
+    
+    .event-datetime__month {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .event-datetime__day {
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+    
+    .event-datetime__details {
+      flex: 1;
+    }
+    
+    .event-datetime__date {
+      font-weight: 600;
+      color: var(--color-black);
+    }
+    
+    .event-datetime__time {
+      font-size: 0.9rem;
+      color: var(--color-gray-500);
+    }
+    
+    .event-location {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1rem;
+      background: var(--color-white);
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--color-gray-200);
+    }
+    
+    .event-location__icon {
       font-size: 1.25rem;
     }
     
-    /* Registration Form */
-    .event-form {
-      border-top: 1px solid var(--color-gray-200);
-      padding-top: 1.5rem;
+    .event-location__name {
+      font-weight: 600;
+      color: var(--color-black);
     }
     
-    .event-form__title {
+    .event-location__address {
+      font-size: 0.9rem;
+      color: var(--color-gray-500);
+    }
+    
+    /* About Section */
+    .event-about {
+      background: var(--color-white);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid var(--color-gray-200);
+    }
+    
+    .event-about__title {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 1.1rem;
       font-weight: 600;
@@ -174,57 +235,144 @@
       color: var(--color-link-blue);
     }
     
-    .event-form__group {
+    .event-about__content {
+      font-size: 0.95rem;
+      color: var(--color-gray-700);
+    }
+    
+    .event-about__content p {
       margin-bottom: 1rem;
     }
     
-    .event-form__label {
-      display: block;
-      font-size: 0.875rem;
-      font-weight: 500;
+    .event-about__content ul {
+      margin: 1rem 0;
+      padding-left: 0;
+      list-style: none;
+    }
+    
+    .event-about__content li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    
+    .event-about__content li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--color-link-orange);
+      font-weight: 600;
+    }
+    
+    .event-about__section-title {
+      font-weight: 700;
+      color: var(--color-link-blue);
+      margin-top: 1.5rem;
       margin-bottom: 0.5rem;
+    }
+    
+    .event-about__emoji-list {
+      list-style: none !important;
+      padding-left: 0 !important;
+    }
+    
+    .event-about__emoji-list li {
+      padding-left: 0 !important;
+    }
+    
+    .event-about__emoji-list li::before {
+      display: none;
+    }
+    
+    .event-about__divider {
+      border: none;
+      border-top: 1px solid var(--color-gray-200);
+      margin: 1.5rem 0;
+    }
+    
+    /* Registration Card */
+    .registration-card {
+      order: 1;
+      background: var(--color-white);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid var(--color-gray-200);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 80px;
+      height: fit-content;
+    }
+    
+    @media (min-width: 768px) {
+      .registration-card { order: 2; }
+    }
+    
+    .registration-card__title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--color-link-blue);
+    }
+    
+    .registration-card__subtitle {
+      font-size: 0.9rem;
+      color: var(--color-gray-500);
+      margin-bottom: 1.25rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
       color: var(--color-black);
     }
     
-    .event-form__input {
+    .form-input {
       width: 100%;
-      padding: 0.875rem 1rem;
-      font-size: 1rem;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
       font-family: inherit;
-      border: 2px solid var(--color-gray-200);
-      border-radius: 0.5rem;
+      border: 1.5px solid var(--color-gray-200);
+      border-radius: 8px;
       transition: border-color 0.2s;
     }
     
-    .event-form__input:focus {
+    .form-input:focus {
       outline: none;
       border-color: var(--color-link-blue);
     }
     
-    .event-form__input::placeholder {
-      color: #a0a0a0;
+    .form-input::placeholder {
+      color: var(--color-gray-400);
     }
     
-    .event-form__submit {
+    .btn-register {
       width: 100%;
-      padding: 1rem;
+      padding: 0.875rem;
       font-size: 1rem;
       font-weight: 600;
       font-family: 'Space Grotesk', sans-serif;
       background: var(--color-link-orange);
-      color: var(--color-white);
+      color: white;
       border: none;
-      border-radius: 0.5rem;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.2s, transform 0.2s;
+      transition: all 0.2s;
+      margin-top: 0.5rem;
     }
     
-    .event-form__submit:hover {
+    .btn-register:hover {
       background: #d97f15;
       transform: translateY(-1px);
     }
     
-    .event-form__note {
+    .registration-card__footer {
       text-align: center;
       font-size: 0.8rem;
       color: var(--color-gray-500);
@@ -232,214 +380,247 @@
     }
     
     /* Success State */
-    .event-form__success {
+    .success-message {
       display: none;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 1rem;
     }
     
-    .event-form__success.show {
+    .success-message.show {
       display: block;
     }
     
-    .event-form__success-icon {
+    .success-message__icon {
       font-size: 3rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
     
-    .event-form__success-title {
+    .success-message__title {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--color-link-blue);
       margin-bottom: 0.5rem;
     }
     
-    .event-form__success-text {
+    .success-message__text {
+      font-size: 0.9rem;
       color: var(--color-gray-500);
     }
     
     /* Footer */
-    .event-footer {
+    .footer {
       background: var(--color-link-blue);
-      color: var(--color-white);
+      color: white;
       text-align: center;
       padding: 1.5rem;
+      margin-top: 3rem;
     }
     
-    .event-footer__text {
-      font-size: 0.875rem;
+    .footer__text {
+      font-size: 0.85rem;
       opacity: 0.8;
     }
     
-    .event-footer__link {
+    .footer__link {
       color: var(--color-link-orange);
       text-decoration: none;
-    }
-    
-    .event-footer__link:hover {
-      text-decoration: underline;
-    }
-    
-    /* Language Toggle */
-    .lang-toggle {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 2rem;
-      padding: 0.5rem 1rem;
-      color: var(--color-white);
-      font-size: 0.8rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    
-    .lang-toggle:hover {
-      background: rgba(255,255,255,0.2);
-    }
-    
-    /* Responsive */
-    @media (min-width: 640px) {
-      .event-card__image {
-        height: 240px;
-      }
-      
-      .event-card__content {
-        padding: 2rem;
-      }
     }
   </style>
 </head>
 <body>
-  <div class="event-page">
-    <!-- Header -->
-    <header class="event-header">
-      <a href="https://linkfoundation.io" class="event-header__logo">
-        <img src="assets/images/link-foundation-logo.png" alt="Link Foundation" style="height: 32px; width: auto;">
+  <!-- Header -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="https://linkfoundation.io" class="header__logo">
+        <img src="assets/images/link-foundation-logo.png" alt="Link Foundation">
       </a>
-      <button class="lang-toggle" id="lang-toggle" onclick="toggleLanguage()">
-        <span id="lang-current">ES</span> / <span id="lang-other">EN</span>
-      </button>
-    </header>
-    
-    <!-- Main Content -->
-    <main class="event-main">
-      <div class="event-card">
-        <!-- Event Image -->
-        <div class="event-card__image">
-          <div class="event-card__image-content">
-            <div class="event-card__image-icon">☕</div>
-            <div class="event-card__image-title">Cafecito Tech</div>
-          </div>
+      <div class="header__actions">
+        <button class="lang-btn" onclick="toggleLanguage()">
+          <span id="lang-label">EN</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Event Content -->
+    <div class="event-content">
+      <!-- Cover Image -->
+      <div class="event-cover">
+        <img src="assets/images/flyer-evento.png" alt="Cafecito Tech #1">
+      </div>
+      
+      <!-- Host -->
+      <div class="event-host">
+        <div class="event-host__avatar">🔗</div>
+        <span data-i18n="hostedBy">Hosted by <strong>Link Foundation</strong></span>
+      </div>
+      
+      <!-- Title -->
+      <h1 class="event-title">Cafecito Tech #1</h1>
+      
+      <!-- Date/Time -->
+      <div class="event-datetime">
+        <div class="event-datetime__icon">
+          <span class="event-datetime__month" data-i18n="month">MAR</span>
+          <span class="event-datetime__day">7</span>
         </div>
-        
-        <!-- Event Content -->
-        <div class="event-card__content">
-          <span class="event-card__badge" data-i18n="badge">SESIÓN #1</span>
-          
-          <h1 class="event-card__title" data-i18n="title">La IA está aquí</h1>
-          
-          <p class="event-card__subtitle" data-i18n="subtitle">
-            Aprenderás cómo crear tu primer agente con inteligencia artificial en menos de 30 minutos.
-          </p>
-          
-          <div class="event-card__meta">
-            <div class="event-card__meta-item">
-              <span class="event-card__meta-icon">📅</span>
-              <span data-i18n="date">Sábado, 7 de Marzo 2026</span>
-            </div>
-            <div class="event-card__meta-item">
-              <span class="event-card__meta-icon">🕙</span>
-              <span>10:00 AM - 12:00 PM</span>
-            </div>
-            <div class="event-card__meta-item">
-              <span class="event-card__meta-icon">📍</span>
-              <span>Industrious NoDa, Charlotte NC</span>
-            </div>
-            <div class="event-card__meta-item">
-              <span class="event-card__meta-icon">🎟️</span>
-              <span data-i18n="price">Gratis</span>
-            </div>
-          </div>
-          
-          <!-- Registration Form -->
-          <div class="event-form" id="registration-form">
-            <h2 class="event-form__title" data-i18n="formTitle">Reserva tu lugar</h2>
-            
-            <form id="evento-form" onsubmit="handleSubmit(event)">
-              <div class="event-form__group">
-                <label class="event-form__label" for="nombre" data-i18n="labelName">Nombre *</label>
-                <input type="text" id="nombre" name="nombre" required class="event-form__input" placeholder="Tu nombre completo" data-i18n-placeholder="placeholderName">
-              </div>
-              
-              <div class="event-form__group">
-                <label class="event-form__label" for="email">Email *</label>
-                <input type="email" id="email" name="email" required class="event-form__input" placeholder="tu@email.com">
-              </div>
-              
-              <button type="submit" class="event-form__submit" data-i18n="submit">
-                🎟️ Reservar mi lugar
-              </button>
-            </form>
-            
-            <p class="event-form__note" data-i18n="note">
-              Te enviaremos la confirmación y detalles por email.
-            </p>
-          </div>
-          
-          <!-- Success Message -->
-          <div class="event-form__success" id="success-message">
-            <div class="event-form__success-icon">🎉</div>
-            <h3 class="event-form__success-title" data-i18n="successTitle">¡Listo! Tu lugar está reservado</h3>
-            <p class="event-form__success-text" data-i18n="successText">
-              Revisa tu email para la confirmación. ¡Nos vemos el 7 de marzo!
-            </p>
-          </div>
+        <div class="event-datetime__details">
+          <div class="event-datetime__date" data-i18n="fullDate">Saturday, March 7, 2026</div>
+          <div class="event-datetime__time">10:00 AM - 12:00 PM</div>
         </div>
       </div>
-    </main>
+      
+      <!-- Location -->
+      <div class="event-location">
+        <span class="event-location__icon">📍</span>
+        <div>
+          <div class="event-location__name">Industrious NoDa</div>
+          <div class="event-location__address">436 E 36th St, Charlotte, NC 28205</div>
+        </div>
+      </div>
+      
+      <!-- About -->
+      <div class="event-about">
+        <h2 class="event-about__title" data-i18n="aboutTitle">About Event</h2>
+        
+        <div class="event-about__content" id="about-content-es">
+          <p><strong>🇪🇸 El primer networking de tecnología para latinos en Charlotte</strong></p>
+          
+          <p>Acompáñanos este sábado 7 de marzo a un espacio creado para latinos curiosos por la tecnología, la inteligencia artificial y el futuro.</p>
+          
+          <p>Un cafecito entre amigos para aprender, conectar y hacer comunidad.</p>
+          
+          <p>📅 Sábado 7 de marzo · 🕙 10:00 AM<br>
+          📍 Industrious NoDa · 🎟️ Gratis</p>
+          
+          <p class="event-about__section-title">Sesión #1: La IA está aquí</p>
+          <p>Una conversación práctica sobre cómo empezar a usar la inteligencia artificial en tu trabajo o negocio, sin presión y sin tecnicismos.</p>
+          
+          <p>En este primer encuentro hablaremos de cómo usar IA de forma práctica en tu negocio o trabajo. Al finalizar el evento, habrás aprendido:</p>
+          
+          <ul>
+            <li>Cómo usar IA de forma profesional</li>
+            <li>Cómo ahorrar tiempo creando proyectos más efectivos</li>
+            <li>Cómo conectar herramientas externas y crear tu primer agente de IA</li>
+          </ul>
+          
+          <p class="event-about__section-title">Tendremos:</p>
+          <ul class="event-about__emoji-list">
+            <li>☕ Café y appetizers</li>
+            <li>🤝 Networking</li>
+            <li>💬 Conversaciones entre amigos</li>
+          </ul>
+          
+          <p><strong>Ven a tomarte un cafecito, aprender de IA y conectar con otros latinos con intereses similares.</strong></p>
+        </div>
+        
+        <div class="event-about__content" id="about-content-en" style="display: none;">
+          <p><strong>🇺🇸 Charlotte's first tech networking event for the Latino community</strong></p>
+          
+          <p>Join us this Saturday, March 7 for a space created for Latinos curious about technology, artificial intelligence, and the future.</p>
+          
+          <p>A casual cafecito meetup to learn, connect, and build community.</p>
+          
+          <p>📅 Saturday, March 7 · 🕙 10:00 AM<br>
+          📍 Industrious NoDa · 🎟️ Free</p>
+          
+          <p class="event-about__section-title">Session #1: AI Is Here</p>
+          <p>Learn practical ways to start using AI in your work or business — without pressure and without complicated jargon.</p>
+          
+          <p>In this first session, we'll talk about how to use AI in a real, simple, and practical way. By the end of the event, you'll learn:</p>
+          
+          <ul>
+            <li>How to use AI professionally</li>
+            <li>How to save time by creating more effective projects</li>
+            <li>How to connect external tools and build your first AI agent</li>
+          </ul>
+          
+          <p class="event-about__section-title">We'll have:</p>
+          <ul class="event-about__emoji-list">
+            <li>☕ Coffee & appetizers</li>
+            <li>🤝 Networking</li>
+            <li>💬 Friendly conversations</li>
+          </ul>
+          
+          <p><strong>Come grab a cafecito, learn about AI, and connect with other Latinos with similar interests.</strong></p>
+        </div>
+      </div>
+    </div>
     
-    <!-- Footer -->
-    <footer class="event-footer">
-      <p class="event-footer__text">
-        <span data-i18n="footerText">Una iniciativa de</span> 
-        <a href="https://linkfoundation.io" class="event-footer__link">Link Foundation</a>
-      </p>
-    </footer>
-  </div>
+    <!-- Registration Card -->
+    <div class="registration-card">
+      <div id="registration-form">
+        <h3 class="registration-card__title" data-i18n="registerTitle">Registration</h3>
+        <p class="registration-card__subtitle" data-i18n="registerSubtitle">Welcome! To join the event, please register below.</p>
+        
+        <form id="evento-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label class="form-label" for="nombre" data-i18n="labelName">Name *</label>
+            <input type="text" id="nombre" name="nombre" required class="form-input" data-i18n-placeholder="placeholderName" placeholder="Your full name">
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="email">Email *</label>
+            <input type="email" id="email" name="email" required class="form-input" placeholder="you@email.com">
+          </div>
+          
+          <button type="submit" class="btn-register" data-i18n="btnRegister">Register</button>
+        </form>
+        
+        <p class="registration-card__footer" data-i18n="footerNote">
+          We'll send you confirmation and details by email.
+        </p>
+      </div>
+      
+      <!-- Success Message -->
+      <div class="success-message" id="success-message">
+        <div class="success-message__icon">🎉</div>
+        <h3 class="success-message__title" data-i18n="successTitle">You're registered!</h3>
+        <p class="success-message__text" data-i18n="successText">Check your email for confirmation. See you on March 7!</p>
+      </div>
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer__text">
+      <span data-i18n="footerText">An initiative of</span> 
+      <a href="https://linkfoundation.io" class="footer__link">Link Foundation</a>
+    </p>
+  </footer>
   
   <script>
-    // Translations
     const translations = {
       es: {
-        badge: 'SESIÓN #1',
-        title: 'La IA está aquí',
-        subtitle: 'Aprenderás cómo crear tu primer agente con inteligencia artificial en menos de 30 minutos.',
-        date: 'Sábado, 7 de Marzo 2026',
-        price: 'Gratis',
-        formTitle: 'Reserva tu lugar',
+        hostedBy: 'Organizado por <strong>Link Foundation</strong>',
+        month: 'MAR',
+        fullDate: 'Sábado, 7 de Marzo 2026',
+        aboutTitle: 'Acerca del Evento',
+        registerTitle: 'Registro',
+        registerSubtitle: '¡Bienvenido! Para unirte al evento, regístrate abajo.',
         labelName: 'Nombre *',
         placeholderName: 'Tu nombre completo',
-        submit: '🎟️ Reservar mi lugar',
-        note: 'Te enviaremos la confirmación y detalles por email.',
-        successTitle: '¡Listo! Tu lugar está reservado',
+        btnRegister: 'Registrarme',
+        footerNote: 'Te enviaremos la confirmación y detalles por email.',
+        successTitle: '¡Estás registrado!',
         successText: 'Revisa tu email para la confirmación. ¡Nos vemos el 7 de marzo!',
         footerText: 'Una iniciativa de'
       },
       en: {
-        badge: 'SESSION #1',
-        title: 'AI Is Here',
-        subtitle: 'Learn how to create your first AI agent in less than 30 minutes.',
-        date: 'Saturday, March 7, 2026',
-        price: 'Free',
-        formTitle: 'Reserve your spot',
+        hostedBy: 'Hosted by <strong>Link Foundation</strong>',
+        month: 'MAR',
+        fullDate: 'Saturday, March 7, 2026',
+        aboutTitle: 'About Event',
+        registerTitle: 'Registration',
+        registerSubtitle: 'Welcome! To join the event, please register below.',
         labelName: 'Name *',
         placeholderName: 'Your full name',
-        submit: '🎟️ Reserve my spot',
-        note: 'We\'ll send you confirmation and details by email.',
-        successTitle: 'Done! Your spot is reserved',
+        btnRegister: 'Register',
+        footerNote: 'We\'ll send you confirmation and details by email.',
+        successTitle: 'You\'re registered!',
         successText: 'Check your email for confirmation. See you on March 7!',
         footerText: 'An initiative of'
       }
@@ -449,16 +630,32 @@
     
     function updateLanguage() {
       const t = translations[currentLang];
+      
+      // Update text content
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (t[key]) el.textContent = t[key];
+        if (t[key]) {
+          if (key === 'hostedBy') {
+            el.innerHTML = t[key];
+          } else {
+            el.textContent = t[key];
+          }
+        }
       });
+      
+      // Update placeholders
       document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
         const key = el.getAttribute('data-i18n-placeholder');
         if (t[key]) el.placeholder = t[key];
       });
-      document.getElementById('lang-current').textContent = currentLang.toUpperCase();
-      document.getElementById('lang-other').textContent = currentLang === 'es' ? 'EN' : 'ES';
+      
+      // Toggle about content
+      document.getElementById('about-content-es').style.display = currentLang === 'es' ? 'block' : 'none';
+      document.getElementById('about-content-en').style.display = currentLang === 'en' ? 'block' : 'none';
+      
+      // Update lang button
+      document.getElementById('lang-label').textContent = currentLang === 'es' ? 'EN' : 'ES';
+      
       document.documentElement.lang = currentLang;
     }
     
@@ -471,27 +668,22 @@
     function handleSubmit(e) {
       e.preventDefault();
       const form = document.getElementById('evento-form');
-      const successMessage = document.getElementById('success-message');
-      const registrationForm = document.getElementById('registration-form');
+      const submitBtn = form.querySelector('.btn-register');
+      const originalText = submitBtn.textContent;
+      
+      submitBtn.textContent = currentLang === 'es' ? 'Registrando...' : 'Registering...';
+      submitBtn.disabled = true;
       
       const formData = {
         nombre: form.nombre.value,
         email: form.email.value
       };
       
-      // Show loading
-      const submitBtn = form.querySelector('.event-form__submit');
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = currentLang === 'es' ? 'Registrando...' : 'Registering...';
-      submitBtn.disabled = true;
-      
-      // Simulate API call (replace with actual GHL integration)
+      // Simulate API call
       setTimeout(() => {
-        console.log('Form data:', formData);
-        registrationForm.querySelector('form').style.display = 'none';
-        registrationForm.querySelector('.event-form__title').style.display = 'none';
-        registrationForm.querySelector('.event-form__note').style.display = 'none';
-        successMessage.classList.add('show');
+        console.log('Registration:', formData);
+        document.getElementById('registration-form').style.display = 'none';
+        document.getElementById('success-message').classList.add('show');
       }, 1000);
     }
     
