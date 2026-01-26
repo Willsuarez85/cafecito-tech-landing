@@ -68,7 +68,7 @@
       "price": "0",
       "priceCurrency": "USD",
       "availability": "https://schema.org/LimitedAvailability",
-      "url": "https://lu.ma/7b6ykm3k"
+      "url": "#registro"
     }
   }
   </script>
@@ -77,10 +77,18 @@
   <!-- ========== NAVBAR ========== -->
   <nav class="navbar" id="navbar">
     <div class="container navbar__inner">
-      <a href="#" class="navbar__logo">
-        <span class="navbar__logo-icon">☕</span>
-        <span>Cafecito Tech</span>
-      </a>
+      <!-- Link Foundation Brand -->
+      <div class="navbar__brand-group">
+        <a href="https://linkfoundation.io" class="navbar__link-logo" title="Link Foundation">
+          <span class="navbar__link-icon">🔗</span>
+          <span class="navbar__link-name">Link Foundation</span>
+        </a>
+        <span class="navbar__brand-divider">|</span>
+        <a href="#" class="navbar__logo">
+          <span class="navbar__logo-icon">☕</span>
+          <span>Cafecito Tech</span>
+        </a>
+      </div>
 
       <nav class="navbar__nav" aria-label="Navegación principal">
         <ul class="navbar__nav-list" role="list">
@@ -97,7 +105,7 @@
           <span class="lang-toggle__divider">/</span>
           <span class="lang-toggle__other">EN</span>
         </button>
-        <a href="https://lu.ma/7b6ykm3k" target="_blank" rel="noopener" class="btn btn--primary btn--sm navbar__cta" data-i18n="nav.cta">
+        <a href="#registro" class="btn btn--primary btn--sm navbar__cta" data-i18n="nav.cta">
           Reserva tu lugar
         </a>
         <button class="navbar__menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
@@ -120,7 +128,7 @@
       <li><a href="#para-ti" class="mobile-menu__link" data-i18n="nav.foryou">Es para ti</a></li>
     </ul>
     <div class="mobile-menu__cta">
-      <a href="https://lu.ma/7b6ykm3k" target="_blank" rel="noopener" class="btn btn--primary btn--lg" data-i18n="cta.reserve">
+      <a href="#registro" target="_blank" rel="noopener" class="btn btn--primary btn--lg" data-i18n="cta.reserve">
         Reserva tu lugar gratis
       </a>
     </div>
@@ -142,7 +150,7 @@
             Conversaciones reales sobre tech, en español, con un cafecito en mano. Sin presión, sin tecnicismos, solo comunidad.
           </p>
           <div class="hero__ctas">
-            <a href="https://lu.ma/7b6ykm3k" target="_blank" rel="noopener" class="btn btn--primary btn--lg" data-i18n="cta.reserve">
+            <a href="#registro" target="_blank" rel="noopener" class="btn btn--primary btn--lg" data-i18n="cta.reserve">
               Reserva tu lugar gratis
             </a>
             <a href="#eventos" class="btn btn--secondary btn--lg" data-i18n="cta.viewEvents">
@@ -171,7 +179,7 @@
                   <span>Charlotte, NC</span>
                 </div>
               </div>
-              <a href="https://lu.ma/7b6ykm3k" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="cta.register">
+              <a href="#registro" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="cta.register">
                 Registrarme ahora
               </a>
             </div>
@@ -409,7 +417,7 @@
             <p class="for-you__cta-text" data-i18n="foryou.cta">
               Si te interesa la tecnología, este espacio es para ti.
             </p>
-            <a href="https://lu.ma/7b6ykm3k" target="_blank" rel="noopener" class="btn btn--primary btn--lg" data-i18n="cta.reserve">
+            <a href="#registro" target="_blank" rel="noopener" class="btn btn--primary btn--lg" data-i18n="cta.reserve">
               Reserva tu lugar gratis
             </a>
           </div>
@@ -429,14 +437,14 @@
         </header>
 
         <div class="upcoming-events__grid" id="events-grid">
-          <!-- Event Card 1 -->
-          <article class="event-card fade-up">
-            <span class="event-card__badge" data-i18n="event.session1.badge">7 DE MARZO</span>
-            <h3 class="event-card__title" data-i18n="event.session1.title">Session #1: La IA está aquí</h3>
+          <!-- Event Card 1 - La Revolución IA -->
+          <article class="event-card event-card--featured fade-up">
+            <span class="event-card__badge">🔥 PRÓXIMO EVENTO</span>
+            <h3 class="event-card__title">Session #1: La Revolución IA</h3>
             <div class="event-card__meta">
               <div class="event-card__meta-item">
                 <span>📅</span>
-                <span data-i18n="event.session1.date">Sábado, 7 de Marzo 2025</span>
+                <span>Sábado, 7 de Marzo 2026</span>
               </div>
               <div class="event-card__meta-item">
                 <span>🕙</span>
@@ -447,22 +455,25 @@
                 <span>Charlotte, NC</span>
               </div>
             </div>
-            <p class="event-card__description" data-i18n="event.session1.desc">
-              Nuestro primer encuentro. Hablaremos sobre cómo la IA está cambiando todo y qué significa para ti.
+            <p class="event-card__description event-card__description--highlight">
+              <strong>Vas a aprender a construir un agente de inteligencia artificial en tan solo 30 minutos.</strong>
             </p>
-            <a href="https://lu.ma/7b6ykm3k" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="cta.registerArrow">
-              Registrarme →
+            <p class="event-card__description">
+              Aprende a crear tu primer agente para ahorrar tiempo en tu trabajo y en tu vida diaria. Sin experiencia previa necesaria.
+            </p>
+            <a href="#registro" class="btn btn--primary btn--lg">
+              Reservar mi lugar →
             </a>
           </article>
 
-          <!-- Event Card 2 (Coming Soon) -->
+          <!-- Event Card 2 - Próximamente -->
           <article class="event-card fade-up">
-            <span class="event-card__badge" data-i18n="event.session2.badge">ABRIL 2025</span>
-            <h3 class="event-card__title" data-i18n="event.session2.title">Session #2: Por anunciar</h3>
+            <span class="event-card__badge">ABRIL 2026</span>
+            <h3 class="event-card__title">Session #2: Bitcoin + AI Agents</h3>
             <div class="event-card__meta">
               <div class="event-card__meta-item">
                 <span>📅</span>
-                <span data-i18n="event.session2.date">Sábado, 5 de Abril 2025</span>
+                <span>Sábado, 4 de Abril 2026</span>
               </div>
               <div class="event-card__meta-item">
                 <span>🕙</span>
@@ -473,19 +484,23 @@
                 <span>Charlotte, NC</span>
               </div>
             </div>
-            <p class="event-card__description" data-i18n="event.session2.desc">
-              El tema se anunciará pronto. Síguenos para enterarte primero.
+            <p class="event-card__description">
+              Cómo construir tu primer empleado digital y entender el futuro del dinero. Detalles próximamente.
             </p>
-            <a href="https://lu.ma/7b6ykm3k" target="_blank" rel="noopener" class="btn btn--secondary" data-i18n="cta.viewCalendar">
-              Ver calendario →
+            <a href="#registro" class="btn btn--secondary">
+              Unirme a la lista →
             </a>
           </article>
         </div>
 
-        <div class="upcoming-events__calendar fade-up">
-          <a href="https://lu.ma/7b6ykm3k" target="_blank" rel="noopener" class="btn btn--ghost" data-i18n="cta.fullCalendar">
-            📆 Ver calendario completo en Luma
-          </a>
+        <div class="upcoming-events__topics fade-up">
+          <h4>Temas que vamos a tocar:</h4>
+          <div class="upcoming-events__topics-list">
+            <span class="topic-tag">🤖 AI & Agents</span>
+            <span class="topic-tag">₿ Bitcoin / Blockchain</span>
+            <span class="topic-tag">⚡ Automatización</span>
+            <span class="topic-tag">🚀 Futuro del trabajo</span>
+          </div>
         </div>
       </div>
     </section>
@@ -542,19 +557,89 @@
       </div>
     </section>
 
-    <!-- ========== CUPOS LIMITADOS SECTION ========== -->
-    <section class="limited-spots">
-      <div class="container limited-spots__inner fade-up">
-        <div class="limited-spots__screen">
-          <div class="limited-spots__content">
-            <p class="limited-spots__prompt" data-i18n="limited.prompt">> Loading registro...</p>
-            <h2 class="limited-spots__title" data-i18n="limited.title">CUPOS LIMITADOS<span class="limited-spots__cursor"></span></h2>
-            <p class="limited-spots__description" data-i18n="limited.description">
-              Mantenemos cada sesión íntima para que las conversaciones sean de calidad. Reserva tu lugar ahora.
+    <!-- ========== REGISTRO SECTION ========== -->
+    <section class="registro-section" id="registro">
+      <div class="container">
+        <div class="registro-section__inner fade-up">
+          <div class="registro-section__info">
+            <span class="registro-section__eyebrow">📅 7 de Marzo 2026 · 10:00 AM</span>
+            <h2 class="registro-section__title">Reserva tu lugar</h2>
+            <p class="registro-section__description">
+              Cupos limitados para mantener las conversaciones de calidad. 
+              <strong>Es gratis.</strong>
             </p>
-            <a href="https://lu.ma/7b6ykm3k" target="_blank" rel="noopener" class="btn btn--primary btn--lg limited-spots__cta" data-i18n="cta.reserve">
-              Reserva tu lugar gratis
-            </a>
+            
+            <div class="registro-section__event-info">
+              <div class="registro-section__event-detail">
+                <span>🎯</span>
+                <span><strong>Tema:</strong> La Revolución IA</span>
+              </div>
+              <div class="registro-section__event-detail">
+                <span>🏆</span>
+                <span><strong>Aprenderás:</strong> Construir tu primer agente de IA en 30 min</span>
+              </div>
+              <div class="registro-section__event-detail">
+                <span>📍</span>
+                <span><strong>Lugar:</strong> Charlotte, NC (ubicación exacta por confirmar)</span>
+              </div>
+            </div>
+
+            <ul class="registro-section__benefits">
+              <li>✓ Confirmaremos tu lugar por email</li>
+              <li>✓ Te enviaremos la ubicación exacta</li>
+              <li>✓ Recibirás recordatorio 24h antes</li>
+            </ul>
+          </div>
+
+          <div class="registro-section__form-container">
+            <form class="registro-form" id="registro-form">
+              <div class="registro-form__group">
+                <label for="firstName" class="registro-form__label">Nombre *</label>
+                <input type="text" id="firstName" name="firstName" required class="registro-form__input" placeholder="Tu nombre">
+              </div>
+
+              <div class="registro-form__group">
+                <label for="lastName" class="registro-form__label">Apellido *</label>
+                <input type="text" id="lastName" name="lastName" required class="registro-form__input" placeholder="Tu apellido">
+              </div>
+
+              <div class="registro-form__group">
+                <label for="email" class="registro-form__label">Email *</label>
+                <input type="email" id="email" name="email" required class="registro-form__input" placeholder="tu@email.com">
+              </div>
+
+              <div class="registro-form__group">
+                <label for="phone" class="registro-form__label">Teléfono (opcional)</label>
+                <input type="tel" id="phone" name="phone" class="registro-form__input" placeholder="+1 (704) 555-0123">
+              </div>
+
+              <div class="registro-form__group">
+                <label for="perfil" class="registro-form__label">¿Cómo te describes? (opcional)</label>
+                <select id="perfil" name="perfil" class="registro-form__select">
+                  <option value="">Selecciona una opción</option>
+                  <option value="entrepreneur">Entrepreneur / Dueño de negocio</option>
+                  <option value="freelancer">Freelancer</option>
+                  <option value="tech-professional">Profesional en tecnología</option>
+                  <option value="marketer">Marketer / Creador</option>
+                  <option value="curious">Curioso / Aprendiendo</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--lg registro-form__submit">
+                🎟️ Reservar mi lugar gratis
+              </button>
+
+              <p class="registro-form__footer">
+                Una iniciativa de <a href="https://linkfoundation.io" target="_blank">Link Foundation</a>
+              </p>
+            </form>
+
+            <!-- Success message (hidden by default) -->
+            <div class="registro-form__success" id="registro-success" style="display: none;">
+              <span class="registro-form__success-icon">🎉</span>
+              <h3>¡Listo! Tu lugar está reservado</h3>
+              <p>Revisa tu email para la confirmación. ¡Nos vemos el 7 de marzo!</p>
+            </div>
           </div>
         </div>
       </div>
@@ -675,7 +760,7 @@
           <a href="#por-que" class="footer__link" data-i18n="nav.why">Por qué ir</a>
           <a href="#agenda" class="footer__link" data-i18n="nav.agenda">Agenda</a>
           <a href="#eventos" class="footer__link" data-i18n="nav.events">Eventos</a>
-          <a href="https://lu.ma/7b6ykm3k" target="_blank" rel="noopener" class="footer__link" data-i18n="footer.register">Registro</a>
+          <a href="#registro" target="_blank" rel="noopener" class="footer__link" data-i18n="footer.register">Registro</a>
         </div>
 
         <div class="footer__social">

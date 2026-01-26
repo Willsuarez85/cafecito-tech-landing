@@ -28,12 +28,23 @@
   --color-brown-light: #8B7355;
   --color-terracotta: #B86B4A;
 
-  /* CRT Green - Retro Tech */
+  /* Link Foundation Brand Colors */
+  --color-link-orange: #FF6B35;
+  --color-link-orange-dark: #E55A2B;
+  --color-link-orange-light: #FF8555;
+  --color-link-blue: #1E3A5F;
+  
+  /* CRT Green - Retro Tech (keeping for decorative elements) */
   --color-crt-green: #33FF33;
   --color-crt-green-dim: #22CC22;
   --color-crt-green-glow: rgba(51, 255, 51, 0.3);
   --color-crt-bg: #1A2A1A;
   --color-crt-bg-light: #243524;
+  
+  /* Primary Action Color - Link Foundation Orange */
+  --color-primary: var(--color-link-orange);
+  --color-primary-dark: var(--color-link-orange-dark);
+  --color-primary-light: var(--color-link-orange-light);
 
   /* Semantic Colors */
   --color-success: var(--color-crt-green);

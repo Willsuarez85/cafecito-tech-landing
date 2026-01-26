@@ -570,3 +570,99 @@
   );
 
 })();
+
+  // ==========================================================================
+  // GHL Form Integration
+  // ==========================================================================
+
+  const GHL_CONFIG = {
+    apiUrl: 'https://services.leadconnectorhq.com/contacts/',
+    locationId: '16si1rBnP02ZCR1Igv3o',
+    // API key should be handled server-side in production
+    // For now, we'll use a proxy or serverless function
+    tags: ['cafecito-tech', 'evento-marzo-2026', 'lead-source-landing'],
+    source: 'Cafecito Tech Landing'
+  };
+
+  function initRegistroForm() {
+    const form = document.getElementById('registro-form');
+    const successMessage = document.getElementById('registro-success');
+    
+    if (!form) return;
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const submitBtn = form.querySelector('.registro-form__submit');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Registrando...';
+      submitBtn.disabled = true;
+
+      const formData = {
+        firstName: form.firstName.value.trim(),
+        lastName: form.lastName.value.trim(),
+        email: form.email.value.trim(),
+        phone: form.phone.value.trim() || null,
+        locationId: GHL_CONFIG.locationId,
+        tags: GHL_CONFIG.tags,
+        source: GHL_CONFIG.source,
+        customFields: []
+      };
+
+      // Add profile if selected
+      const perfil = form.perfil.value;
+      if (perfil) {
+        formData.customFields.push({
+          key: 'perfil',
+          value: perfil
+        });
+      }
+
+      try {
+        // In production, this should go through a serverless function
+        // to keep the API key secure. For now, we'll simulate success.
+        
+        // Simulate API call delay
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        // Show success message
+        form.style.display = 'none';
+        successMessage.style.display = 'block';
+        
+        // Track conversion (if analytics is set up)
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'registro_cafecito_tech', {
+            event_category: 'conversion',
+            event_label: 'marzo_2026'
+          });
+        }
+
+        console.log('Form data ready for GHL:', formData);
+        
+        // TODO: Implement actual API call via serverless function
+        // Example endpoint: /api/registro
+        /*
+        const response = await fetch('/api/registro', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+        
+        if (!response.ok) throw new Error('Registration failed');
+        */
+
+      } catch (error) {
+        console.error('Registration error:', error);
+        submitBtn.textContent = 'Error - Intenta de nuevo';
+        submitBtn.disabled = false;
+        
+        setTimeout(() => {
+          submitBtn.textContent = originalText;
+        }, 3000);
+      }
+    });
+  }
+
+  // Initialize form on DOM ready
+  document.addEventListener('DOMContentLoaded', initRegistroForm);
+

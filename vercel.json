@@ -2,6 +2,11 @@
   "version": 2,
   "name": "cafecito-tech",
   "public": true,
+  "functions": {
+    "api/*.js": {
+      "runtime": "@vercel/node@3.0.0"
+    }
+  },
   "headers": [
     {
       "source": "/(.*)",
@@ -54,8 +59,8 @@
   ],
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
     }
   ],
   "trailingSlash": false,

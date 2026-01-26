@@ -33,6 +33,41 @@
   gap: var(--space-4);
 }
 
+.navbar__brand-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.navbar__link-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  text-decoration: none;
+  color: var(--color-link-orange);
+  transition: opacity var(--transition-fast);
+}
+
+.navbar__link-logo:hover {
+  opacity: 0.8;
+}
+
+.navbar__link-icon {
+  font-size: var(--text-lg);
+}
+
+.navbar__link-name {
+  display: none;
+}
+
+.navbar__brand-divider {
+  color: var(--color-gray-300);
+  font-weight: var(--font-normal);
+}
+
 .navbar__logo {
   display: flex;
   align-items: center;
@@ -46,6 +81,13 @@
 
 .navbar__logo-icon {
   font-size: var(--text-2xl);
+}
+
+/* Show Link Foundation name on larger screens */
+@media (min-width: 768px) {
+  .navbar__link-name {
+    display: inline;
+  }
 }
 
 .navbar__nav {
@@ -1080,4 +1122,208 @@
 .stagger-children.visible > * {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* -------------------------------------------------------------------------
+   Registro Section
+   ------------------------------------------------------------------------- */
+
+.registro-section {
+  padding: var(--section-padding-y) 0;
+  background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-cream-dark) 100%);
+}
+
+.registro-section__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .registro-section__inner {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.registro-section__eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+
+.registro-section__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.registro-section__description {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+}
+
+.registro-section__event-info {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.registro-section__event-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.registro-section__event-detail:last-child {
+  border-bottom: none;
+}
+
+.registro-section__benefits {
+  list-style: none;
+  padding: 0;
+}
+
+.registro-section__benefits li {
+  padding: var(--space-2) 0;
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+}
+
+/* Form Container */
+.registro-section__form-container {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-lg);
+}
+
+.registro-form__group {
+  margin-bottom: var(--space-5);
+}
+
+.registro-form__label {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.registro-form__input,
+.registro-form__select {
+  width: 100%;
+  padding: var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  border: 2px solid var(--color-gray-100);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast);
+  background: var(--color-white);
+}
+
+.registro-form__input:focus,
+.registro-form__select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.registro-form__input::placeholder {
+  color: var(--color-gray-300);
+}
+
+.registro-form__submit {
+  width: 100%;
+  margin-top: var(--space-4);
+}
+
+.registro-form__footer {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-4);
+}
+
+.registro-form__footer a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.registro-form__footer a:hover {
+  text-decoration: underline;
+}
+
+/* Success State */
+.registro-form__success {
+  text-align: center;
+  padding: var(--space-8);
+}
+
+.registro-form__success-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: var(--space-4);
+}
+
+.registro-form__success h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.registro-form__success p {
+  color: var(--color-text-secondary);
+}
+
+/* Topic Tags */
+.upcoming-events__topics {
+  text-align: center;
+  margin-top: var(--space-12);
+}
+
+.upcoming-events__topics h4 {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-4);
+}
+
+.upcoming-events__topics-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.topic-tag {
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-white);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Featured Event Card */
+.event-card--featured {
+  border: 2px solid var(--color-primary);
+  background: linear-gradient(135deg, var(--color-white) 0%, rgba(255, 107, 53, 0.05) 100%);
+}
+
+.event-card__description--highlight {
+  color: var(--color-primary);
+  font-size: var(--text-lg);
 }

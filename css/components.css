@@ -43,16 +43,16 @@
   cursor: not-allowed;
 }
 
-/* Primary Button - CRT Green */
+/* Primary Button - Link Foundation Orange */
 .btn--primary {
-  background-color: var(--color-crt-green);
-  color: var(--color-black);
-  box-shadow: 0 0 0 0 var(--color-crt-green-glow);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: 0 4px 14px rgba(255, 107, 53, 0.3);
 }
 
 .btn--primary:hover {
-  background-color: var(--color-crt-green-dim);
-  box-shadow: var(--shadow-crt);
+  background-color: var(--color-primary-dark);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
   transform: translateY(-2px);
 }
 
