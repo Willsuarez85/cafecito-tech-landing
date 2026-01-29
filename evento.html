@@ -81,12 +81,24 @@
       width: auto;
     }
     
+    .header__back {
+      color: white;
+      text-decoration: none;
+      font-size: 0.9rem;
+      opacity: 0.9;
+      transition: opacity 0.2s;
+    }
+
+    .header__back:hover {
+      opacity: 1;
+    }
+
     .header__actions {
       display: flex;
       align-items: center;
       gap: 1rem;
     }
-    
+
     .lang-btn {
       background: rgba(255,255,255,0.1);
       border: 1px solid rgba(255,255,255,0.2);
@@ -456,6 +468,9 @@
   <!-- Header -->
   <header class="header">
     <div class="header__inner">
+      <a href="index.html" class="header__back">
+        ← <span data-i18n="backLink">Volver</span>
+      </a>
       <a href="https://linkfoundation.io" class="header__logo">
         <img src="assets/images/link-foundation-logo.png" alt="Link Foundation">
       </a>
@@ -576,35 +591,28 @@
     
     <!-- Registration Card -->
     <div class="registration-card">
-      <div id="registration-form">
-        <h3 class="registration-card__title" data-i18n="registerTitle">🎟️ Reserva tu entrada</h3>
-        <p class="registration-card__subtitle" data-i18n="registerSubtitle">Aparta tu lugar para el próximo Cafecito Tech. ¡Cupos limitados!</p>
-        
-        <form id="evento-form" onsubmit="handleSubmit(event)">
-          <div class="form-group">
-            <label class="form-label" for="nombre" data-i18n="labelName">Nombre *</label>
-            <input type="text" id="nombre" name="nombre" required class="form-input" data-i18n-placeholder="placeholderName" placeholder="Tu nombre completo">
-          </div>
-          
-          <div class="form-group">
-            <label class="form-label" for="email">Email *</label>
-            <input type="email" id="email" name="email" required class="form-input" placeholder="tu@email.com">
-          </div>
-          
-          <button type="submit" class="btn-register" data-i18n="btnRegister">🎟️ Reservar mi lugar gratis</button>
-        </form>
-        
-        <p class="registration-card__footer" data-i18n="footerNote">
-          Te enviaremos la confirmación y detalles por email.
-        </p>
-      </div>
-      
-      <!-- Success Message -->
-      <div class="success-message" id="success-message">
-        <div class="success-message__icon">🎉</div>
-        <h3 class="success-message__title" data-i18n="successTitle">You're registered!</h3>
-        <p class="success-message__text" data-i18n="successText">Check your email for confirmation. See you on March 7!</p>
-      </div>
+      <h3 class="registration-card__title" data-i18n="registerTitle">🎟️ Reserva tu entrada</h3>
+      <p class="registration-card__subtitle" data-i18n="registerSubtitle">Aparta tu lugar para el próximo Cafecito Tech. ¡Cupos limitados!</p>
+
+      <!-- GHL Form -->
+      <iframe
+        src="https://api.leadconnectorhq.com/widget/form/weWlwB5wR8XnNrZiXlay"
+        style="width:100%;height:493px;border:none;border-radius:3px"
+        id="inline-weWlwB5wR8XnNrZiXlay"
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name="Cafecito"
+        data-height="493"
+        data-layout-iframe-id="inline-weWlwB5wR8XnNrZiXlay"
+        data-form-id="weWlwB5wR8XnNrZiXlay"
+        title="Cafecito"
+      ></iframe>
+      <script src="https://link.msgsndr.com/js/form_embed.js"></script>
     </div>
   </main>
   
@@ -619,6 +627,7 @@
   <script>
     const translations = {
       es: {
+        backLink: 'Volver',
         hostedBy: 'Organizado por <strong>Link Foundation</strong>',
         month: 'MAR',
         fullDate: 'Sábado, 7 de Marzo 2026',
@@ -634,6 +643,7 @@
         footerText: 'Una iniciativa de'
       },
       en: {
+        backLink: 'Back',
         hostedBy: 'Hosted by <strong>Link Foundation</strong>',
         month: 'MAR',
         fullDate: 'Saturday, March 7, 2026',
@@ -687,28 +697,6 @@
       currentLang = currentLang === 'es' ? 'en' : 'es';
       localStorage.setItem('cafecito-lang', currentLang);
       updateLanguage();
-    }
-    
-    function handleSubmit(e) {
-      e.preventDefault();
-      const form = document.getElementById('evento-form');
-      const submitBtn = form.querySelector('.btn-register');
-      const originalText = submitBtn.textContent;
-      
-      submitBtn.textContent = currentLang === 'es' ? 'Registrando...' : 'Registering...';
-      submitBtn.disabled = true;
-      
-      const formData = {
-        nombre: form.nombre.value,
-        email: form.email.value
-      };
-      
-      // Simulate API call
-      setTimeout(() => {
-        console.log('Registration:', formData);
-        document.getElementById('registration-form').style.display = 'none';
-        document.getElementById('success-message').classList.add('show');
-      }, 1000);
     }
     
     // Initialize
