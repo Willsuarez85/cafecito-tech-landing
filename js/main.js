@@ -63,7 +63,7 @@
       'why.reason2.title': 'Comunidad, no solo contenido',
       'why.reason2.desc': 'Las mejores oportunidades nacen de conexiones reales. Conoce a otros profesionales, emprendedores y curiosos que están navegando la misma transición que tú.',
       'why.reason3.title': 'Ideas aplicables para tu carrera o negocio',
-      'why.reason3.desc': 'Si trabajas en tech: conversas entre pares y te mantienes al día.<br>Si trabajas en una empresa: te llevas ideas y habilidades que te diferencian y elevan tu perfil profesional.<br>Si tienes un negocio: te llevas ideas reales para aplicar.',
+      'why.reason3.desc': 'Si trabajas en tech: conversas entre pares y te mantienes al día. Si trabajas en una empresa: te llevas ideas y habilidades que te diferencian. Si tienes un negocio: te llevas ideas reales para aplicar.',
 
       // Agenda Section
       'agenda.eyebrow': '¿Qué esperar?',
@@ -195,7 +195,7 @@
       'why.reason2.title': 'Community, not just content',
       'why.reason2.desc': 'The best opportunities come from real connections. Meet other professionals, entrepreneurs and curious minds navigating the same transition as you.',
       'why.reason3.title': 'Actionable ideas for your career or business',
-      'why.reason3.desc': 'If you work in tech: you connect with peers and stay up to date.<br>If you work at a company: you take away ideas and skills that set you apart and elevate your professional profile.<br>If you have a business: you take away real ideas to apply.',
+      'why.reason3.desc': 'If you work in tech: you connect with peers and stay up to date. If you work at a company: you take away ideas and skills that set you apart. If you have a business: you take away real ideas to apply.',
 
       // Agenda Section
       'agenda.eyebrow': 'What to expect?',
