@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="es" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cafecito Tech #2: Mi Primer AI Agent - El primer networking de tecnología para latinos en Charlotte">
+  <title>Cafecito Tech #2 · Link Foundation</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+  
+  <style>
+    :root {
+      --color-link-blue: #051d36;
+      --color-link-orange: #f59420;
+      --color-white: #ffffff;
+      --color-gray-50: #fafafa;
+      --color-gray-100: #f5f5f5;
+      --color-gray-200: #e4e4e4;
+      --color-gray-400: #a0a0a0;
+      --color-gray-500: #6b6b6b;
+      --color-gray-700: #374151;
+      --color-black: #1a1a1a;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--color-gray-50);
+      color: var(--color-black);
+      line-height: 1.6;
+    }
+    
+    /* Header */
+    .header {
+      background: var(--color-link-blue);
+      padding: 0.75rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .header__logo img {
+      height: 40px;
+      width: auto;
+    }
+    
+    .header__actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .lang-btn {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+    
+    .lang-btn:hover { background: rgba(255,255,255,0.2); }
+    
+    /* Main Layout */
+    .main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+      .main {
+        grid-template-columns: 1fr 340px;
+        padding: 2rem;
+      }
+    }
+    
+    /* Event Content */
+    .event-content {
+      order: 1;
+    }
+    
+    @media (min-width: 768px) {
+      .event-content { order: 1; }
+    }
+    
+    .event-cover {
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    
+    .event-cover img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .event-host {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: var(--color-gray-500);
+    }
+    
+    .event-host__avatar {
+      width: 32px;
+      height: 32px;
+      background: var(--color-link-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.8rem;
+    }
+    
+    .event-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--color-link-blue);
+      margin-bottom: 1rem;
+    }
+    
+    .event-datetime {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem;
+      background: var(--color-white);
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      border: 1px solid var(--color-gray-200);
+    }
+    
+    .event-datetime__icon {
+      width: 48px;
+      height: 48px;
+      background: var(--color-link-orange);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+    }
+    
+    .event-datetime__month {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .event-datetime__day {
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+    
+    .event-datetime__details {
+      flex: 1;
+    }
+    
+    .event-datetime__date {
+      font-weight: 600;
+      color: var(--color-black);
+    }
+    
+    .event-datetime__time {
+      font-size: 0.9rem;
+      color: var(--color-gray-500);
+    }
+    
+    .event-location {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1rem;
+      background: var(--color-white);
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--color-gray-200);
+    }
+    
+    .event-location__icon {
+      font-size: 1.25rem;
+    }
+    
+    .event-location__name {
+      font-weight: 600;
+      color: var(--color-black);
+    }
+    
+    .event-location__address {
+      font-size: 0.9rem;
+      color: var(--color-gray-500);
+    }
+    
+    /* About Section */
+    .event-about {
+      background: var(--color-white);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid var(--color-gray-200);
+    }
+    
+    .event-about__title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--color-link-blue);
+    }
+    
+    .event-about__content {
+      font-size: 0.95rem;
+      color: var(--color-gray-700);
+    }
+    
+    .event-about__content p {
+      margin-bottom: 1rem;
+    }
+    
+    .event-about__content ul {
+      margin: 1rem 0;
+      padding-left: 0;
+      list-style: none;
+    }
+    
+    .event-about__content li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    
+    .event-about__content li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--color-link-orange);
+      font-weight: 600;
+    }
+    
+    .event-about__section-title {
+      font-weight: 700;
+      color: var(--color-link-blue);
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .event-about__emoji-list {
+      list-style: none !important;
+      padding-left: 0 !important;
+    }
+    
+    .event-about__emoji-list li {
+      padding-left: 0 !important;
+    }
+    
+    .event-about__emoji-list li::before {
+      display: none;
+    }
+    
+    .event-about__divider {
+      border: none;
+      border-top: 1px solid var(--color-gray-200);
+      margin: 1.5rem 0;
+    }
+    
+    /* Registration Card */
+    .registration-card {
+      order: 2;
+      background: var(--color-white);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid var(--color-gray-200);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      height: fit-content;
+    }
+    
+    @media (min-width: 768px) {
+      .registration-card { 
+        order: 2;
+        position: sticky;
+        top: 80px;
+      }
+    }
+    
+    .registration-card__title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--color-link-blue);
+    }
+    
+    .registration-card__subtitle {
+      font-size: 0.9rem;
+      color: var(--color-gray-500);
+      margin-bottom: 1.25rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+      color: var(--color-black);
+    }
+    
+    .form-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      font-family: inherit;
+      border: 1.5px solid var(--color-gray-200);
+      border-radius: 8px;
+      transition: border-color 0.2s;
+    }
+    
+    .form-input:focus {
+      outline: none;
+      border-color: var(--color-link-blue);
+    }
+    
+    .form-input::placeholder {
+      color: var(--color-gray-400);
+    }
+    
+    .btn-register {
+      width: 100%;
+      padding: 0.875rem;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--color-link-orange);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 0.5rem;
+    }
+    
+    .btn-register:hover {
+      background: #d97f15;
+      transform: translateY(-1px);
+    }
+    
+    .registration-card__footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--color-gray-500);
+      margin-top: 1rem;
+    }
+    
+    /* Success State */
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 1rem;
+    }
+    
+    .success-message.show {
+      display: block;
+    }
+    
+    .success-message__icon {
+      font-size: 3rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .success-message__title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-link-blue);
+      margin-bottom: 0.5rem;
+    }
+    
+    .success-message__text {
+      font-size: 0.9rem;
+      color: var(--color-gray-500);
+    }
+    
+    /* Footer */
+    .footer {
+      background: var(--color-link-blue);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+    }
+    
+    .footer__text {
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+    
+    .footer__link {
+      color: var(--color-link-orange);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="https://linkfoundation.io" class="header__logo">
+        <img src="assets/images/link-foundation-logo.png" alt="Link Foundation">
+      </a>
+      <div class="header__actions">
+        <button class="lang-btn" onclick="toggleLanguage()">
+          <span id="lang-label">EN</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Event Content -->
+    <div class="event-content">
+      <!-- Cover Image -->
+      <div class="event-cover">
+        <img src="assets/images/flyer-evento.png" alt="Cafecito Tech #2 — Mi Primer AI Agent">
+      </div>
+      
+      <!-- Host -->
+      <div class="event-host">
+        <div class="event-host__avatar">🔗</div>
+        <span data-i18n="hostedBy">Organizado por <strong>Link Foundation</strong></span>
+      </div>
+      
+      <!-- Title -->
+      <h1 class="event-title">Cafecito Tech #2 — Mi Primer AI Agent</h1>
+      
+      <!-- Date/Time -->
+      <div class="event-datetime">
+        <div class="event-datetime__icon">
+          <span class="event-datetime__month" data-i18n="month">ABR</span>
+          <span class="event-datetime__day">4</span>
+        </div>
+        <div class="event-datetime__details">
+          <div class="event-datetime__date" data-i18n="fullDate">Sábado, 4 de Abril 2026</div>
+          <div class="event-datetime__time">10:00 AM - 12:00 PM</div>
+        </div>
+      </div>
+      
+      <!-- Location -->
+      <div class="event-location">
+        <span class="event-location__icon">📍</span>
+        <div>
+          <div class="event-location__name">Industrious NoDa</div>
+          <div class="event-location__address">436 E 36th St, Charlotte, NC 28205</div>
+        </div>
+      </div>
+      
+      <!-- About -->
+      <div class="event-about">
+        <h2 class="event-about__title" data-i18n="aboutTitle">Acerca del Evento</h2>
+        
+        <div class="event-about__content" id="about-content-es">
+          <p><strong>🇪🇸 El primer networking de tecnología para latinos en Charlotte</strong></p>
+          
+          <p>Acompáñanos el sábado 4 de abril a nuestro segundo Cafecito Tech — un espacio para latinos curiosos por la tecnología, la inteligencia artificial y el futuro.</p>
+          
+          <p>Un cafecito entre amigos para aprender, conectar y hacer comunidad.</p>
+          
+          <p>📅 Sábado 4 de abril · 🕙 10:00 AM<br>
+          📍 Industrious NoDa · 🎟️ Gratis</p>
+          
+          <p class="event-about__section-title">Sesión #2: Mi Primer AI Agent</p>
+          <p>Aprende qué son los AI Agents, cómo funcionan y cómo construir el tuyo desde cero — sin experiencia técnica necesaria. Demos en vivo y herramientas prácticas para empezar hoy mismo.</p>
+
+          <p>En esta sesión aprenderás:</p>
+          
+          <ul>
+            <li>Qué son los AI Agents y en qué se diferencian de un chatbot</li>
+            <li>Cómo piensan, actúan y automatizan trabajo real</li>
+            <li>Cómo construir tu primer agente con herramientas accesibles</li>
+          </ul>
+          
+          <p class="event-about__section-title">Tendremos:</p>
+          <ul class="event-about__emoji-list">
+            <li>☕ Café y appetizers</li>
+            <li>🤝 Networking</li>
+            <li>🤖 Demo en vivo: construye un agente simple</li>
+            <li>💬 Conversaciones entre amigos</li>
+          </ul>
+          
+          <p><strong>Ven a tomarte un cafecito, aprender sobre AI Agents y conectar con otros latinos construyendo el futuro.</strong></p>
+        </div>
+        
+        <div class="event-about__content" id="about-content-en" style="display: none;">
+          <p><strong>🇺🇸 Charlotte's first tech networking event for the Latino community</strong></p>
+          
+          <p>Join us on Saturday, April 4 for our second Cafecito Tech — a space for Latinos curious about technology, artificial intelligence, and the future.</p>
+          
+          <p>A casual cafecito meetup to learn, connect, and build community.</p>
+          
+          <p>📅 Saturday, April 4 · 🕙 10:00 AM<br>
+          📍 Industrious NoDa · 🎟️ Free</p>
+          
+          <p class="event-about__section-title">Session #2: My First AI Agent</p>
+          <p>Learn what AI Agents are, how they work, and how to build your own from scratch — no technical experience needed. Live demos and practical tools to get started today.</p>
+
+          <p>In this session you'll learn:</p>
+          
+          <ul>
+            <li>What AI Agents are and how they differ from a chatbot</li>
+            <li>How they think, act, and automate real work</li>
+            <li>How to build your first agent with accessible tools</li>
+          </ul>
+          
+          <p class="event-about__section-title">We'll have:</p>
+          <ul class="event-about__emoji-list">
+            <li>☕ Coffee & appetizers</li>
+            <li>🤝 Networking</li>
+            <li>🤖 Live demo: build a simple agent</li>
+            <li>💬 Friendly conversations</li>
+          </ul>
+          
+          <p><strong>Come grab a cafecito, learn about AI Agents, and connect with other Latinos building the future.</strong></p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Registration Card -->
+    <div class="registration-card">
+      <h3 class="registration-card__title">🎟️ Reserva tu entrada</h3>
+      <p class="registration-card__subtitle">Aparta tu lugar para Cafecito Tech #2. ¡Cupos limitados!</p>
+
+      <!-- GHL Form Embed — cafecito-2 -->
+      <iframe
+        src="https://api.leadconnectorhq.com/widget/form/trUOqMH1lfJewznhkNBt"
+        style="width:100%;min-height:480px;border:none;border-radius:8px;"
+        scrolling="no"
+        id="ghl-form-cafecito2"
+        title="Registro Cafecito Tech #2"
+      ></iframe>
+      <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer__text">
+      <span data-i18n="footerText">Una iniciativa de</span> 
+      <a href="https://linkfoundation.io" class="footer__link">Link Foundation</a>
+    </p>
+  </footer>
+  
+  <script>
+    const translations = {
+      es: {
+        hostedBy: 'Organizado por <strong>Link Foundation</strong>',
+        month: 'ABR',
+        fullDate: 'Sábado, 4 de Abril 2026',
+        aboutTitle: 'Acerca del Evento',
+        registerTitle: '🎟️ Reserva tu entrada',
+        registerSubtitle: 'Aparta tu lugar para Cafecito Tech #2. ¡Cupos limitados!',
+        labelName: 'Nombre *',
+        placeholderName: 'Tu nombre completo',
+        labelPhone: 'Teléfono',
+        placeholderPhone: '+1 (555) 000-0000',
+        btnRegister: '🎟️ Reservar mi lugar gratis',
+        footerNote: 'Te enviaremos la confirmación y detalles por email.',
+        successTitle: '¡Estás registrado!',
+        successText: 'Revisa tu email para la confirmación. ¡Nos vemos el 4 de abril!',
+        footerText: 'Una iniciativa de'
+      },
+      en: {
+        hostedBy: 'Hosted by <strong>Link Foundation</strong>',
+        month: 'APR',
+        fullDate: 'Saturday, April 4, 2026',
+        aboutTitle: 'About Event',
+        registerTitle: '🎟️ Reserve your spot',
+        registerSubtitle: 'Save your seat for Cafecito Tech #2. Limited spots!',
+        labelName: 'Name *',
+        placeholderName: 'Your full name',
+        labelPhone: 'Phone',
+        placeholderPhone: '+1 (555) 000-0000',
+        btnRegister: '🎟️ Reserve my free spot',
+        footerNote: 'We\'ll send you confirmation and details by email.',
+        successTitle: 'You\'re registered!',
+        successText: 'Check your email for confirmation. See you on April 4!',
+        footerText: 'An initiative of'
+      }
+    };
+    
+    let currentLang = localStorage.getItem('cafecito-lang') || 'es';
+    
+    function updateLanguage() {
+      const t = translations[currentLang];
+      
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key]) {
+          if (key === 'hostedBy') {
+            el.innerHTML = t[key];
+          } else {
+            el.textContent = t[key];
+          }
+        }
+      });
+      
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (t[key]) el.placeholder = t[key];
+      });
+      
+      document.getElementById('about-content-es').style.display = currentLang === 'es' ? 'block' : 'none';
+      document.getElementById('about-content-en').style.display = currentLang === 'en' ? 'block' : 'none';
+      
+      document.getElementById('lang-label').textContent = currentLang === 'es' ? 'EN' : 'ES';
+      document.documentElement.lang = currentLang;
+    }
+    
+    function toggleLanguage() {
+      currentLang = currentLang === 'es' ? 'en' : 'es';
+      localStorage.setItem('cafecito-lang', currentLang);
+      updateLanguage();
+    }
+    
+    updateLanguage();
+  </script>
+</body>
+</html>
