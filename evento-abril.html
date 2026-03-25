@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cafecito Tech #2: Agentes IA 101 - El primer networking de tecnología para latinos en Charlotte">
+  <meta name="description" content="Cafecito Tech #2: Agentes de IA y el Futuro del Trabajo — El espacio donde la comunidad latina de Charlotte navega la revolución tecnológica juntos.">
   <title>Cafecito Tech #2 · Link Foundation</title>
   
   <!-- Fonts -->
@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦞</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
   
   <style>
     :root {
@@ -97,10 +97,6 @@
     /* Event Content */
     .event-content {
       order: 1;
-    }
-    
-    @media (min-width: 768px) {
-      .event-content { order: 1; }
     }
     
     .event-cover {
@@ -243,7 +239,15 @@
     .event-about__content p {
       margin-bottom: 1rem;
     }
-    
+
+    .event-about__tagline {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--color-link-blue);
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
+    }
+
     .event-about__content ul {
       margin: 1rem 0;
       padding-left: 0;
@@ -289,6 +293,76 @@
       border-top: 1px solid var(--color-gray-200);
       margin: 1.5rem 0;
     }
+
+    /* Speakers */
+    .speakers-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0 1.5rem 0;
+    }
+
+    .speaker-card {
+      background: var(--color-gray-50);
+      border: 1px solid var(--color-gray-200);
+      border-radius: 10px;
+      padding: 1rem;
+    }
+
+    .speaker-card__role {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-link-orange);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.25rem;
+    }
+
+    .speaker-card__name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--color-link-blue);
+      margin-bottom: 0.25rem;
+    }
+
+    .speaker-card__title {
+      font-size: 0.8rem;
+      color: var(--color-gray-500);
+      line-height: 1.4;
+    }
+
+    /* Agenda */
+    .agenda-list {
+      list-style: none !important;
+      padding-left: 0 !important;
+    }
+
+    .agenda-list li {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0.6rem 0 !important;
+      padding-left: 0 !important;
+      border-bottom: 1px solid var(--color-gray-100);
+    }
+
+    .agenda-list li::before {
+      display: none !important;
+    }
+
+    .agenda-time {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-link-orange);
+      white-space: nowrap;
+      min-width: 80px;
+      padding-top: 2px;
+    }
+
+    .agenda-desc {
+      font-size: 0.9rem;
+      color: var(--color-gray-700);
+    }
     
     /* Registration Card */
     .registration-card {
@@ -321,93 +395,6 @@
       font-size: 0.9rem;
       color: var(--color-gray-500);
       margin-bottom: 1.25rem;
-    }
-    
-    .form-group {
-      margin-bottom: 1rem;
-    }
-    
-    .form-label {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 500;
-      margin-bottom: 0.4rem;
-      color: var(--color-black);
-    }
-    
-    .form-input {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      font-size: 0.95rem;
-      font-family: inherit;
-      border: 1.5px solid var(--color-gray-200);
-      border-radius: 8px;
-      transition: border-color 0.2s;
-    }
-    
-    .form-input:focus {
-      outline: none;
-      border-color: var(--color-link-blue);
-    }
-    
-    .form-input::placeholder {
-      color: var(--color-gray-400);
-    }
-    
-    .btn-register {
-      width: 100%;
-      padding: 0.875rem;
-      font-size: 1rem;
-      font-weight: 600;
-      font-family: 'Space Grotesk', sans-serif;
-      background: var(--color-link-orange);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.2s;
-      margin-top: 0.5rem;
-    }
-    
-    .btn-register:hover {
-      background: #d97f15;
-      transform: translateY(-1px);
-    }
-    
-    .registration-card__footer {
-      text-align: center;
-      font-size: 0.8rem;
-      color: var(--color-gray-500);
-      margin-top: 1rem;
-    }
-    
-    /* Success State */
-    .success-message {
-      display: none;
-      text-align: center;
-      padding: 1rem;
-    }
-    
-    .success-message.show {
-      display: block;
-    }
-    
-    .success-message__icon {
-      font-size: 3rem;
-      margin-bottom: 0.75rem;
-    }
-    
-    .success-message__title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--color-link-blue);
-      margin-bottom: 0.5rem;
-    }
-    
-    .success-message__text {
-      font-size: 0.9rem;
-      color: var(--color-gray-500);
     }
     
     /* Footer */
@@ -451,7 +438,7 @@
     <div class="event-content">
       <!-- Cover Image -->
       <div class="event-cover">
-        <img src="assets/images/flyer-evento-abril.png" alt="Cafecito Tech #2 — Agentes IA 101">
+        <img src="assets/images/flyer-evento-abril.png" alt="Cafecito Tech #2 — Agentes de IA y el Futuro del Trabajo">
       </div>
       
       <!-- Host -->
@@ -461,7 +448,7 @@
       </div>
       
       <!-- Title -->
-      <h1 class="event-title">Cafecito Tech #2 — Agentes IA 101</h1>
+      <h1 class="event-title" data-i18n="eventTitle">Cafecito Tech #2 — Agentes de IA y el Futuro del Trabajo</h1>
       
       <!-- Date/Time -->
       <div class="event-datetime">
@@ -471,7 +458,7 @@
         </div>
         <div class="event-datetime__details">
           <div class="event-datetime__date" data-i18n="fullDate">Sábado, 4 de Abril 2026</div>
-          <div class="event-datetime__time">10:00 AM - 12:00 PM</div>
+          <div class="event-datetime__time">10:00 AM – 12:00 PM</div>
         </div>
       </div>
       
@@ -479,8 +466,8 @@
       <div class="event-location">
         <span class="event-location__icon">📍</span>
         <div>
-          <div class="event-location__name">Lugar por confirmar</div>
-          <div class="event-location__address">Charlotte, NC · Detalles próximamente</div>
+          <div class="event-location__name" data-i18n="locationName">Lugar por confirmar</div>
+          <div class="event-location__address" data-i18n="locationAddress">Charlotte, NC · Detalles próximamente</div>
         </div>
       </div>
       
@@ -488,68 +475,152 @@
       <div class="event-about">
         <h2 class="event-about__title" data-i18n="aboutTitle">Acerca del Evento</h2>
         
+        <!-- Spanish Content -->
         <div class="event-about__content" id="about-content-es">
-          <p><strong>🇪🇸 El primer networking de tecnología para latinos en Charlotte</strong></p>
-          
-          <p>Acompáñanos el sábado 4 de abril a nuestro segundo Cafecito Tech — un espacio para latinos curiosos por la tecnología, la inteligencia artificial y el futuro.</p>
-          
-          <p>Un cafecito entre amigos para aprender, conectar y hacer comunidad.</p>
-          
-          <p>📅 Sábado 4 de abril · 🕙 10:00 AM<br>
-          📍 Lugar por confirmar · 🎟️ Gratis</p>
-          
-          <p class="event-about__section-title">Sesión #2: Agentes IA 101</p>
-          <p>Aprende qué son los AI Agents, cómo funcionan y cómo construir el tuyo desde cero — sin experiencia técnica necesaria. Demos en vivo y herramientas prácticas para empezar hoy mismo.</p>
+          <p class="event-about__tagline">
+            ¿La IA va a cambiar tu trabajo? Hablemos.
+          </p>
 
-          <p>En esta sesión aprenderás:</p>
-          
+          <p>
+            Cafecito Tech es el espacio donde los latinos en Charlotte se reúnen a entender el big picture — no solo cómo usar ChatGPT, sino qué significa esta revolución para nosotros: el trabajo, la carrera, los negocios, el futuro.
+          </p>
+
+          <p>
+            En esta segunda sesión, dos personas que ya están usando IA en su día a día van a conversar contigo. Sin slides, sin tecnicismos. Como dos amigos tomando café.
+          </p>
+
+          <p class="event-about__section-title">Los Panelistas</p>
+
+          <div class="speakers-grid">
+            <div class="speaker-card">
+              <div class="speaker-card__role">Perspectiva Emprendedor</div>
+              <div class="speaker-card__name">William Suarez</div>
+              <div class="speaker-card__title">Fundador, Simplicity Agency · Charlotte, NC</div>
+            </div>
+            <div class="speaker-card">
+              <div class="speaker-card__role">Perspectiva Corporativo</div>
+              <div class="speaker-card__name">Javier Guillen</div>
+              <div class="speaker-card__title">Data & Analytics, Microsoft</div>
+            </div>
+          </div>
+
+          <p class="event-about__section-title">Lo que vas a llevarte</p>
           <ul>
-            <li>Qué son los AI Agents y en qué se diferencian de un chatbot</li>
-            <li>Cómo piensan, actúan y automatizan trabajo real</li>
-            <li>Cómo construir tu primer agente con herramientas accesibles</li>
+            <li>Entender qué son los agentes de IA — en palabras simples</li>
+            <li>Ver cómo se usan en negocios reales y en carreras corporativas</li>
+            <li>Un primer paso concreto para empezar esta misma semana</li>
           </ul>
-          
-          <p class="event-about__section-title">Tendremos:</p>
+
+          <p class="event-about__section-title">Agenda del día</p>
+          <ul class="agenda-list">
+            <li>
+              <span class="agenda-time">10:00 AM</span>
+              <span class="agenda-desc">☕ Café y networking libre</span>
+            </li>
+            <li>
+              <span class="agenda-time">10:30 AM</span>
+              <span class="agenda-desc">🗣️ Mesas redondas — conversen entre ustedes</span>
+            </li>
+            <li>
+              <span class="agenda-time">11:05 AM</span>
+              <span class="agenda-desc">☕ Panel: Agentes de IA y el Futuro del Trabajo</span>
+            </li>
+            <li>
+              <span class="agenda-time">11:45 AM</span>
+              <span class="agenda-desc">❓ Q&A abierto — tus preguntas, sin filtro</span>
+            </li>
+            <li>
+              <span class="agenda-time">12:00 PM</span>
+              <span class="agenda-desc">📋 Cierre y networking</span>
+            </li>
+          </ul>
+
+          <hr class="event-about__divider">
+
+          <p class="event-about__section-title">Habrá:</p>
           <ul class="event-about__emoji-list">
-            <li>☕ Café y appetizers</li>
-            <li>🤝 Networking</li>
-            <li>🤖 Demo en vivo: construye un agente simple</li>
-            <li>💬 Conversaciones entre amigos</li>
+            <li>☕ Café y refrigerio</li>
+            <li>🤝 Networking con la comunidad latina tech de Charlotte</li>
+            <li>🎙️ Panel de conversación — emprendedor + corporativo</li>
+            <li>💬 Q&A abierto</li>
+            <li>🎟️ Entrada gratis</li>
           </ul>
-          
-          <p><strong>Ven a tomarte un cafecito, aprender sobre AI Agents y conectar con otros latinos construyendo el futuro.</strong></p>
-        </div>
-        
-        <div class="event-about__content" id="about-content-en" style="display: none;">
-          <p><strong>🇺🇸 Charlotte's first tech networking event for the Latino community</strong></p>
-          
-          <p>Join us on Saturday, April 4 for our second Cafecito Tech — a space for Latinos curious about technology, artificial intelligence, and the future.</p>
-          
-          <p>A casual cafecito meetup to learn, connect, and build community.</p>
-          
-          <p>📅 Saturday, April 4 · 🕙 10:00 AM<br>
-          📍 Location TBD · 🎟️ Free</p>
-          
-          <p class="event-about__section-title">Session #2: AI Agents 101</p>
-          <p>Learn what AI Agents are, how they work, and how to build your own from scratch — no technical experience needed. Live demos and practical tools to get started today.</p>
 
-          <p>In this session you'll learn:</p>
-          
+          <p><br><strong>Vas a llegar con preguntas. Vas a salir con un plan.</strong></p>
+        </div>
+
+        <!-- English Content -->
+        <div class="event-about__content" id="about-content-en" style="display: none;">
+          <p class="event-about__tagline">
+            Is AI going to change your job? Let's talk about it.
+          </p>
+
+          <p>
+            Cafecito Tech is the space where Latinos in Charlotte come together to understand the big picture — not just how to use ChatGPT, but what this revolution means for all of us: work, careers, businesses, and the future.
+          </p>
+
+          <p>
+            In this second session, two people already using AI in their daily lives will have an honest conversation with you. No slides, no jargon. Just two friends over coffee.
+          </p>
+
+          <p class="event-about__section-title">The Panelists</p>
+
+          <div class="speakers-grid">
+            <div class="speaker-card">
+              <div class="speaker-card__role">Entrepreneur Perspective</div>
+              <div class="speaker-card__name">William Suarez</div>
+              <div class="speaker-card__title">Founder, Simplicity Agency · Charlotte, NC</div>
+            </div>
+            <div class="speaker-card">
+              <div class="speaker-card__role">Corporate Perspective</div>
+              <div class="speaker-card__name">Javier Guillen</div>
+              <div class="speaker-card__title">Data & Analytics, Microsoft</div>
+            </div>
+          </div>
+
+          <p class="event-about__section-title">What you'll walk away with</p>
           <ul>
-            <li>What AI Agents are and how they differ from a chatbot</li>
-            <li>How they think, act, and automate real work</li>
-            <li>How to build your first agent with accessible tools</li>
+            <li>A clear, simple understanding of what AI agents actually are</li>
+            <li>Real use cases from both a business and corporate perspective</li>
+            <li>A concrete first step to start using AI this week</li>
           </ul>
-          
+
+          <p class="event-about__section-title">Event Agenda</p>
+          <ul class="agenda-list">
+            <li>
+              <span class="agenda-time">10:00 AM</span>
+              <span class="agenda-desc">☕ Coffee & networking</span>
+            </li>
+            <li>
+              <span class="agenda-time">10:30 AM</span>
+              <span class="agenda-desc">🗣️ Roundtable discussions</span>
+            </li>
+            <li>
+              <span class="agenda-time">11:05 AM</span>
+              <span class="agenda-desc">☕ Panel: AI Agents & the Future of Work</span>
+            </li>
+            <li>
+              <span class="agenda-time">11:45 AM</span>
+              <span class="agenda-desc">❓ Open Q&A — your questions, no filter</span>
+            </li>
+            <li>
+              <span class="agenda-time">12:00 PM</span>
+              <span class="agenda-desc">📋 Closing & networking</span>
+            </li>
+          </ul>
+
+          <hr class="event-about__divider">
+
           <p class="event-about__section-title">We'll have:</p>
           <ul class="event-about__emoji-list">
-            <li>☕ Coffee & appetizers</li>
-            <li>🤝 Networking</li>
-            <li>🤖 Live demo: build a simple agent</li>
-            <li>💬 Friendly conversations</li>
+            <li>☕ Coffee & refreshments</li>
+            <li>🤝 Networking with Charlotte's Latino tech community</li>
+            <li>🎙️ Panel conversation — entrepreneur + corporate</li>
+            <li>💬 Open Q&A</li>
+            <li>🎟️ Free admission</li>
           </ul>
-          
-          <p><strong>Come grab a cafecito, learn about AI Agents, and connect with other Latinos building the future.</strong></p>
+
+          <p><br><strong>You'll arrive with questions. You'll leave with a plan.</strong></p>
         </div>
       </div>
     </div>
@@ -557,7 +628,7 @@
     <!-- Registration Card -->
     <div class="registration-card">
       <h3 class="registration-card__title">🎟️ Reserva tu entrada</h3>
-      <p class="registration-card__subtitle">Aparta tu lugar para Cafecito Tech #2. ¡Cupos limitados!</p>
+      <p class="registration-card__subtitle">Gratis · Cupos limitados · 4 de Abril 2026</p>
 
       <!-- GHL Form Embed — cafecito-2 -->
       <iframe
@@ -574,8 +645,9 @@
   <!-- Footer -->
   <footer class="footer">
     <p class="footer__text">
-      <span data-i18n="footerText">Una iniciativa de</span> 
+      Una iniciativa de 
       <a href="https://linkfoundation.io" class="footer__link">Link Foundation</a>
+      · Charlotte, NC · Navega el futuro. En comunidad.
     </p>
   </footer>
   
@@ -583,36 +655,22 @@
     const translations = {
       es: {
         hostedBy: 'Organizado por <strong>Link Foundation</strong>',
+        eventTitle: 'Cafecito Tech #2 — Agentes de IA y el Futuro del Trabajo',
         month: 'ABR',
         fullDate: 'Sábado, 4 de Abril 2026',
         aboutTitle: 'Acerca del Evento',
-        registerTitle: '🎟️ Reserva tu entrada',
-        registerSubtitle: 'Aparta tu lugar para Cafecito Tech #2. ¡Cupos limitados!',
-        labelName: 'Nombre *',
-        placeholderName: 'Tu nombre completo',
-        labelPhone: 'Teléfono',
-        placeholderPhone: '+1 (555) 000-0000',
-        btnRegister: '🎟️ Reservar mi lugar gratis',
-        footerNote: 'Te enviaremos la confirmación y detalles por email.',
-        successTitle: '¡Estás registrado!',
-        successText: 'Revisa tu email para la confirmación. ¡Nos vemos el 4 de abril!',
+        locationName: 'Lugar por confirmar',
+        locationAddress: 'Charlotte, NC · Detalles próximamente',
         footerText: 'Una iniciativa de'
       },
       en: {
         hostedBy: 'Hosted by <strong>Link Foundation</strong>',
+        eventTitle: 'Cafecito Tech #2 — AI Agents & the Future of Work',
         month: 'APR',
         fullDate: 'Saturday, April 4, 2026',
-        aboutTitle: 'About Event',
-        registerTitle: '🎟️ Reserve your spot',
-        registerSubtitle: 'Save your seat for Cafecito Tech #2. Limited spots!',
-        labelName: 'Name *',
-        placeholderName: 'Your full name',
-        labelPhone: 'Phone',
-        placeholderPhone: '+1 (555) 000-0000',
-        btnRegister: '🎟️ Reserve my free spot',
-        footerNote: 'We\'ll send you confirmation and details by email.',
-        successTitle: 'You\'re registered!',
-        successText: 'Check your email for confirmation. See you on April 4!',
+        aboutTitle: 'About the Event',
+        locationName: 'Location TBD',
+        locationAddress: 'Charlotte, NC · Details coming soon',
         footerText: 'An initiative of'
       }
     };
@@ -625,17 +683,12 @@
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (t[key]) {
-          if (key === 'hostedBy') {
+          if (['hostedBy'].includes(key)) {
             el.innerHTML = t[key];
           } else {
             el.textContent = t[key];
           }
         }
-      });
-      
-      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-        const key = el.getAttribute('data-i18n-placeholder');
-        if (t[key]) el.placeholder = t[key];
       });
       
       document.getElementById('about-content-es').style.display = currentLang === 'es' ? 'block' : 'none';
