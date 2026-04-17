@@ -42,6 +42,8 @@
       'event.session2.date': 'Sábado, 5 de Abril 2025',
       'event.session2.badge': 'ABRIL 2025',
       'event.session2.desc': 'El tema se anunciará pronto. Síguenos para enterarte primero.',
+      'event.session3.title': 'Sesión #3: Verdad, Periodismo y Democracia en la era de la IA',
+      'event.session3.date': 'Sábado, 16 de Mayo 2026',
 
       // What Is Section
       'whatis.eyebrow': '¿Qué es?',
@@ -174,6 +176,8 @@
       'event.session2.date': 'Saturday, April 5, 2025',
       'event.session2.badge': 'APRIL 2025',
       'event.session2.desc': 'Topic coming soon. Follow us to be the first to know.',
+      'event.session3.title': 'Session #3: Truth, Journalism and Democracy in the AI Era',
+      'event.session3.date': 'Saturday, May 16, 2026',
 
       // What Is Section
       'whatis.eyebrow': 'What is it?',
