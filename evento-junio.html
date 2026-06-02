@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cafecito Tech — Claude 101. Taller práctico en español para aprender a usar Claude en el trabajo, la vida personal y proyectos. Sábado 13 de junio · Industrious NoDa · Charlotte, NC · Gratis.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cafecito Tech · Claude 101">
+  <meta property="og:description" content="Aprende a usar Claude y sal con tu propio asistente para planear tus metas y tu semana.">
+  <meta property="og:image" content="assets/images/flyer-evento-junio.svg">
+  <title>Cafecito Tech · Claude 101 · Junio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --blue:#051d36; --orange:#f7931a; --white:#fff; --cream:#faf8f3; --line:#e7e2d8; --text:#182331; --muted:#627084; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif; background:var(--cream); color:var(--text); line-height:1.6; }
+    .header { background:var(--blue); padding:.8rem 1rem; position:sticky; top:0; z-index:10; box-shadow:0 10px 30px rgba(5,29,54,.16); }
+    .header__inner { max-width:1120px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+    .header img { height:42px; width:auto; display:block; }
+    .header a.cta { background:var(--orange); color:var(--blue); text-decoration:none; padding:.7rem 1rem; border-radius:999px; font-weight:800; font-size:.92rem; }
+    .main { max-width:1120px; margin:0 auto; padding:2rem 1rem 4rem; }
+    .grid { display:grid; grid-template-columns:1fr; gap:2rem; align-items:start; }
+    @media (min-width:860px){ .grid { grid-template-columns:minmax(0,1fr) 360px; } .card--sticky{ position:sticky; top:92px; } }
+    .badge { display:inline-flex; align-items:center; gap:.5rem; background:#fff3df; color:#8d4a00; border:1px solid #ffd9a1; padding:.45rem .8rem; border-radius:999px; font-weight:800; font-size:.85rem; text-transform:uppercase; letter-spacing:.05em; }
+    h1 { font-family:'Space Grotesk',Inter,sans-serif; color:var(--blue); font-size:clamp(2.2rem,6vw,4.8rem); line-height:.98; letter-spacing:-.055em; margin:1rem 0 1rem; }
+    .lead { font-size:clamp(1.08rem,2.4vw,1.35rem); color:#334255; max-width:760px; margin-bottom:1.25rem; }
+    .promise { background:var(--blue); color:white; border-radius:24px; padding:1.25rem; margin:1.4rem 0; box-shadow:0 18px 50px rgba(5,29,54,.18); }
+    .promise strong { color:var(--orange); }
+    .details { display:grid; grid-template-columns:1fr; gap:.8rem; margin:1.5rem 0; }
+    @media (min-width:620px){ .details{ grid-template-columns:repeat(3,1fr); } }
+    .detail { background:#fff; border:1px solid var(--line); border-radius:18px; padding:1rem; }
+    .detail span { display:block; font-size:1.4rem; margin-bottom:.35rem; }
+    .detail b { color:var(--blue); display:block; line-height:1.25; }
+    .detail small { color:var(--muted); }
+    .section { background:white; border:1px solid var(--line); border-radius:24px; padding:1.4rem; margin-top:1rem; }
+    .section h2 { font-family:'Space Grotesk',Inter,sans-serif; color:var(--blue); font-size:1.45rem; margin-bottom:.75rem; }
+    .section p { color:#39485b; margin-bottom:.85rem; }
+    .section ul { list-style:none; display:grid; gap:.65rem; margin-top:.7rem; }
+    .section li { position:relative; padding-left:1.75rem; color:#334255; }
+    .section li:before { content:'✓'; position:absolute; left:0; top:0; color:var(--orange); font-weight:900; }
+    .section .event-about__section-title { font-weight:800; color:var(--blue); margin-top:1rem; margin-bottom:.35rem; }
+    .section .emoji-list li { padding-left:0; }
+    .section .emoji-list li:before { display:none; }
+    .flyer { border-radius:24px; overflow:hidden; border:1px solid var(--line); background:white; box-shadow:0 20px 60px rgba(5,29,54,.14); }
+    .flyer img { width:100%; display:block; }
+    .card { background:white; border:1px solid var(--line); border-radius:24px; padding:1.25rem; box-shadow:0 20px 60px rgba(5,29,54,.12); }
+    .card h3 { font-family:'Space Grotesk',Inter,sans-serif; color:var(--blue); font-size:1.4rem; margin-bottom:.35rem; }
+    .card p { color:var(--muted); margin-bottom:1rem; }
+    iframe { width:100%; min-height:520px; border:0; border-radius:14px; background:#f6f6f6; }
+    .footer { background:var(--blue); color:white; text-align:center; padding:1.5rem; }
+    .footer a { color:var(--orange); text-decoration:none; font-weight:800; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="https://linkfoundation.io"><img src="assets/images/link-foundation-logo.png" alt="Link Foundation"></a>
+      <a class="cta" href="#registro">Reserva tu lugar</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="grid">
+      <div>
+        <span class="badge">Organizado por Link Foundation</span>
+        <h1>Claude 101: Aprende a usar la IA que está cambiando la forma de trabajar</h1>
+        <div class="details">
+          <div class="detail"><span>JUN</span><b>Sábado, 13 de junio 2026</b><small>10:00 AM – 12:00 PM</small></div>
+          <div class="detail"><span>📍</span><b>Industrious NoDa</b><small>436 E 36th St, Charlotte, NC 28205</small></div>
+          <div class="detail"><span>🚘</span><b>Parking gratis</b><small>Cupos limitados</small></div>
+        </div>
+
+        <section class="section">
+          <h2>Acerca del Evento</h2>
+          <p>Acompáñanos el sábado 13 de junio a un espacio para latinos curiosos por la tecnología, donde aprendemos sin tecnicismos, en español, y en un ambiente relajado.</p>
+          <p>☕ <strong>¿Ya usas AI, pero sientes que podrías sacarle mucho más provecho?</strong> En esta sesión vamos a explorar Claude, una de las herramientas de inteligencia artificial más útiles para pensar, escribir, organizar ideas y trabajar mejor.</p>
+          <p>No venimos solo a hablar de AI. Venimos a usarla. Vas a construir tu propio asistente en Claude para ayudarte a ordenar prioridades, planear tus metas y organizar tu semana.</p>
+          <p class="event-about__section-title">En esta sesión habrá:</p>
+          <ul class="emoji-list">
+            <li>🧠 Demo práctica para entender cómo usar Claude como asistente</li>
+            <li>✍️ Ejercicio guiado para crear tu propio asistente personal</li>
+            <li>❓ Espacio para preguntas, ejemplos y conversación</li>
+            <li>☕ Café, networking y comunidad en español</li>
+          </ul>
+          <p><strong>Cupos limitados para mantenerlo práctico, cercano y conversable.</strong></p>
+        </section>
+      </div>
+
+      <aside class="card card--sticky" id="registro">
+        <div class="flyer" style="margin-bottom:1rem;"><img src="assets/images/flyer-evento-junio.svg" alt="Cafecito Tech — Claude 101"></div>
+        <h3>Reserva tu lugar</h3>
+        <p>Aparta tu entrada gratis. Los cupos son limitados para mantener el taller práctico y cercano.</p>
+        <iframe src="https://api.leadconnectorhq.com/widget/form/CSgv0lrXdsxFlWt7dC2R" scrolling="no" title="Registro Cafecito Tech Junio"></iframe>
+        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Una iniciativa de <a href="https://linkfoundation.io">Link Foundation</a></p>
+  </footer>
+</body>
+</html>
