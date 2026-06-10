@@ -51,6 +51,15 @@
     @media (min-width: 768px) { .registration-card { order: 2; position: sticky; top: 80px; } }
     .registration-card__title { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--color-link-blue); }
     .registration-card__subtitle { font-size: 0.9rem; color: var(--color-gray-500); margin-bottom: 1.25rem; }
+    .sold-out-badge { display: inline-flex; align-items: center; gap: 0.4rem; background: #fff1e2; border: 1px solid #ffd6a3; color: var(--color-link-blue); border-radius: 999px; padding: 0.45rem 0.75rem; margin-bottom: 1rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+    .sold-out-message { background: #f8fbff; border: 1px solid #d8e6f5; border-radius: 10px; padding: 1rem; margin-bottom: 1rem; color: var(--color-gray-700); font-size: 0.95rem; }
+    .newsletter-form { display: grid; gap: 0.75rem; margin-top: 1rem; }
+    .newsletter-form__label { font-size: 0.78rem; font-weight: 700; color: var(--color-link-blue); text-transform: uppercase; letter-spacing: 0.04em; }
+    .newsletter-form__input { width: 100%; border: 1px solid var(--color-gray-200); border-radius: 8px; padding: 0.85rem 0.9rem; font: inherit; color: var(--color-black); background: var(--color-white); }
+    .newsletter-form__input:focus { outline: 2px solid rgba(245, 148, 32, 0.25); border-color: var(--color-link-orange); }
+    .newsletter-form__button { width: 100%; border: none; border-radius: 8px; padding: 0.9rem 1rem; background: var(--color-link-orange); color: var(--color-white); font: inherit; font-weight: 700; cursor: pointer; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    .newsletter-form__button:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(245, 148, 32, 0.28); }
+    .newsletter-form__hint { font-size: 0.78rem; color: var(--color-gray-500); line-height: 1.4; }
     .capacity-note { display: flex; align-items: flex-start; gap: 0.5rem; background: #fffbf0; border: 1px solid #f3e0b0; color: var(--color-gray-700); border-radius: 10px; padding: 0.875rem 1rem; margin-top: 1rem; font-size: 0.9rem; line-height: 1.45; }
     .capacity-note strong { color: var(--color-link-blue); }
     .footer { background: var(--color-link-blue); color: white; text-align: center; padding: 1.5rem; margin-top: 3rem; }
@@ -134,18 +143,25 @@
       </div>
     </div>
     <div class="registration-card">
-      <h3 class="registration-card__title" id="register-title">&#127967; Reserva tu entrada</h3>
-      <p class="registration-card__subtitle" id="register-subtitle">Aparta tu lugar. ¡Cupos limitados!</p>
-      <iframe
-        src="https://api.leadconnectorhq.com/widget/form/9uGfBo0Y1NA7U83lEZgv"
-        style="width:100%;min-height:480px;border:none;border-radius:8px;"
-        scrolling="no"
-        title="Registro Cafecito Tech Junio"
-      ></iframe>
-      <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+      <div class="sold-out-badge" id="sold-out-badge">&#9989; Sold out</div>
+      <h3 class="registration-card__title" id="register-title">Gracias por tu interés</h3>
+      <p class="registration-card__subtitle" id="register-subtitle">Ya no tenemos más espacios disponibles para esta sesión.</p>
+      <div class="sold-out-message" id="sold-out-message">
+        Nos encantaría verte en el próximo Cafecito Tech. Regístrate a nuestro newsletter y sé de las primeras personas en enterarte cuando abramos inscripciones para el siguiente evento.
+      </div>
+      <div class="newsletter-form" id="newsletter-form-wrapper">
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/form/6AFscVqXPkM8AYOhsbRq"
+          style="width:100%;min-height:430px;border:none;border-radius:8px;"
+          scrolling="no"
+          title="Newsletter Cafecito Tech"
+        ></iframe>
+        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+        <p class="newsletter-form__hint" id="newsletter-hint">Te avisaremos sobre próximos Cafecito Tech, talleres y oportunidades de Link Foundation.</p>
+      </div>
       <div class="capacity-note" id="capacity-note">
-        <span>&#9888;&#65039;</span>
-        <span><strong>Nota:</strong> solo hay 25 cupos disponibles para mantener la calidad de la sesión y poder trabajar de forma cercana con cada persona.</span>
+        <span>&#9749;</span>
+        <span><strong>Gracias:</strong> los cupos se llenaron. Para mantener la calidad de la sesión, no estamos abriendo más espacios para este evento.</span>
       </div>
     </div>
   </main>
@@ -160,8 +176,8 @@
   <script>
     var lang = localStorage.getItem('cafecito-lang') || 'es';
     var copy = {
-      es: { hostedBy: 'Organizado por ', eventTitle: 'Claude 101: Aprende a usar la IA que está cambiando la forma de trabajar', fullDate: 'Sábado, 13 de junio 2026', locationAddress: '436 E 36th St, Charlotte, NC 28205', parkingText: 'Parking gratis.', aboutTitle: 'Acerca del Evento', registerTitle: '\uD83C\uDFFF Reserva tu entrada', registerSubtitle: 'Aparta tu lugar. \u00a1Cupos limitados!', capacityNote: '<strong>Nota:</strong> solo hay 25 cupos disponibles para mantener la calidad de la sesión y poder trabajar de forma cercana con cada persona.', footerText: 'Una iniciativa de', langBtn: '\uD83C\uDDFA\uD83C\uDDF8 EN' },
-      en: { hostedBy: 'Hosted by ', eventTitle: 'Claude 101: Learn how to use the AI changing the way we work', fullDate: 'Saturday, June 13, 2026', locationAddress: '436 E 36th St, Charlotte, NC 28205', parkingText: 'Free parking.', aboutTitle: 'About the Event', registerTitle: '\uD83C\uDFFF Reserve your spot', registerSubtitle: 'Save your seat. Limited spots!', capacityNote: '<strong>Note:</strong> only 25 spots are available so we can keep the quality of the session high and work closely with each person.', footerText: 'An initiative of', langBtn: '\uD83C\uDDEA\uD83C\uDDF8 ES' }
+      es: { hostedBy: 'Organizado por ', eventTitle: 'Claude 101: Aprende a usar la IA que está cambiando la forma de trabajar', fullDate: 'Sábado, 13 de junio 2026', locationAddress: '436 E 36th St, Charlotte, NC 28205', parkingText: 'Parking gratis.', aboutTitle: 'Acerca del Evento', soldOutBadge: '✅ Sold out', registerTitle: 'Gracias por tu interés', registerSubtitle: 'Ya no tenemos más espacios disponibles para esta sesión.', soldOutMessage: 'Nos encantaría verte en el próximo Cafecito Tech. Regístrate a nuestro newsletter y sé de las primeras personas en enterarte cuando abramos inscripciones para el siguiente evento.', nameLabel: 'Nombre', namePlaceholder: 'Tu nombre', emailLabel: 'Email', emailPlaceholder: 'tu@email.com', newsletterSubmit: 'Unirme al newsletter', newsletterHint: 'Te avisaremos sobre próximos Cafecito Tech, talleres y oportunidades de Link Foundation.', capacityNote: '<strong>Gracias:</strong> los cupos se llenaron. Para mantener la calidad de la sesión, no estamos abriendo más espacios para este evento.', footerText: 'Una iniciativa de', langBtn: '\uD83C\uDDFA\uD83C\uDDF8 EN' },
+      en: { hostedBy: 'Hosted by ', eventTitle: 'Claude 101: Learn how to use the AI changing the way we work', fullDate: 'Saturday, June 13, 2026', locationAddress: '436 E 36th St, Charlotte, NC 28205', parkingText: 'Free parking.', aboutTitle: 'About the Event', soldOutBadge: '✅ Sold out', registerTitle: 'Thank you for your interest', registerSubtitle: 'We no longer have seats available for this session.', soldOutMessage: 'We would love to see you at the next Cafecito Tech. Join our newsletter and be among the first to know when registration opens for the next event.', nameLabel: 'Name', namePlaceholder: 'Your name', emailLabel: 'Email', emailPlaceholder: 'you@email.com', newsletterSubmit: 'Join the newsletter', newsletterHint: 'We will send updates about upcoming Cafecito Tech events, workshops, and Link Foundation opportunities.', capacityNote: '<strong>Thank you:</strong> this session is now full. To keep the quality of the workshop high, we are not opening more seats for this event.', footerText: 'An initiative of', langBtn: '\uD83C\uDDEA\uD83C\uDDF8 ES' }
     };
     function applyLanguage() {
       var t = copy[lang];
@@ -171,8 +187,11 @@
       document.getElementById('location-address').textContent = t.locationAddress;
       document.getElementById('parking-text').textContent = t.parkingText;
       document.getElementById('about-title').textContent = t.aboutTitle;
+      document.getElementById('sold-out-badge').textContent = t.soldOutBadge;
       document.getElementById('register-title').textContent = t.registerTitle;
       document.getElementById('register-subtitle').textContent = t.registerSubtitle;
+      document.getElementById('sold-out-message').textContent = t.soldOutMessage;
+      document.getElementById('newsletter-hint').textContent = t.newsletterHint;
       document.getElementById('capacity-note').querySelector('span:last-child').innerHTML = t.capacityNote;
       document.getElementById('footer-text').textContent = t.footerText;
       document.getElementById('lang-label').textContent = t.langBtn;
