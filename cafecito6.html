@@ -103,7 +103,7 @@
         </div>
         <div class="event-datetime__details">
           <div class="event-datetime__date" id="full-date">Sábado, 12 de septiembre 2026</div>
-          <div class="event-datetime__time">10:00 AM a 12:00 PM</div>
+          <div class="event-datetime__time" id="event-time">10:00 AM a 12:00 PM</div>
         </div>
       </div>
       <div class="event-location">
@@ -221,6 +221,7 @@
         eventLead: 'Hay un debate abierto sobre la IA y queremos escuchar tu voz: qué está funcionando, dónde no debería entrar, qué te preocupa. Nos encontramos en comunidad para navegarlo juntos.',
         dateMonth: 'SEP',
         fullDate: 'Sábado, 12 de septiembre 2026',
+        eventTime: '10:00 AM a 12:00 PM',
         locationAddress: '436 E 36th St, Charlotte, NC 28205',
         parkingText: 'Parking gratis.',
         aboutTitle: 'Acerca del Evento',
@@ -238,6 +239,7 @@
         eventLead: 'There is an open debate about AI and we want to hear your voice: what is working, where it should not go, what worries you. We are getting together as a community to navigate it together.',
         dateMonth: 'SEP',
         fullDate: 'Saturday, September 12, 2026',
+        eventTime: '10:00 AM to 12:00 PM',
         locationAddress: '436 E 36th St, Charlotte, NC 28205',
         parkingText: 'Free parking.',
         aboutTitle: 'About the Event',
@@ -257,6 +259,7 @@
       document.getElementById('event-lead').textContent = t.eventLead;
       document.getElementById('date-month').textContent = t.dateMonth;
       document.getElementById('full-date').textContent = t.fullDate;
+      document.getElementById('event-time').textContent = t.eventTime;
       document.getElementById('location-address').textContent = t.locationAddress;
       document.getElementById('parking-text').textContent = t.parkingText;
       document.getElementById('about-title').textContent = t.aboutTitle;
