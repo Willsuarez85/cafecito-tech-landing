@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sesión gratis y en español en Charlotte. Aprende a usar Claude AI como asistente para organizarte mejor, ser más productivo y avanzar en tus proyectos.">
+  <meta property="og:title" content="Aprende a ser más productivo en tu trabajo y proyectos con Claude AI ☕ | Link Foundation">
+  <meta property="og:description" content="Sesión gratis y en español en Charlotte. Aprende a usar Claude AI como asistente para organizarte mejor, ser más productivo y avanzar en tus proyectos.">
+  <meta property="og:image" content="https://cafecito-tech.vercel.app/assets/images/flyer-cafecito5-FINAL.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://linkfoundation.io/cafecito5">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Aprende a ser más productivo en tu trabajo y proyectos con Claude AI ☕ | Link Foundation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --color-link-blue: #051d36; --color-link-orange: #f59420; --color-white: #ffffff; --color-gray-50: #fafafa; --color-gray-200: #e4e4e4; --color-gray-500: #6b6b6b; --color-gray-700: #374151; --color-black: #1a1a1a; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background-color: var(--color-gray-50); color: var(--color-black); line-height: 1.6; }
+    .header { background: var(--color-link-blue); padding: 0.75rem 1rem; position: sticky; top: 0; z-index: 100; }
+    .header__inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .header__logo img { height: 40px; width: auto; }
+    .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 0.4rem 0.75rem; border-radius: 6px; font-size: 0.8rem; cursor: pointer; }
+    .lang-btn:hover { background: rgba(255,255,255,0.2); }
+    .main { max-width: 980px; margin: 0 auto; padding: 2rem 1rem; display: grid; grid-template-columns: 1fr; gap: 2rem; }
+    @media (min-width: 768px) { .main { grid-template-columns: 1fr 380px; padding: 2rem; } }
+    .event-content { order: 1; }
+    .event-cover { border-radius: 12px; overflow: hidden; margin-bottom: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+    .event-cover img { width: 100%; height: auto; display: block; }
+    .event-host { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; font-size: 0.9rem; color: var(--color-gray-500); }
+    .event-host__avatar { width: 32px; height: 32px; background: var(--color-link-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem; }
+    .event-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.75rem; font-weight: 700; color: var(--color-link-blue); margin-bottom: 1rem; }
+    .event-datetime { display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: var(--color-white); border-radius: 10px; margin-bottom: 1rem; border: 1px solid var(--color-gray-200); }
+    .event-datetime__icon { width: 48px; height: 48px; background: var(--color-link-orange); border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; font-weight: 700; }
+    .event-datetime__month { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .event-datetime__day { font-size: 1.25rem; line-height: 1; }
+    .event-datetime__details { flex: 1; }
+    .event-datetime__date { font-weight: 600; color: var(--color-black); }
+    .event-datetime__time { font-size: 0.9rem; color: var(--color-gray-500); }
+    .event-location { display: flex; align-items: flex-start; gap: 0.75rem; padding: 1rem; background: var(--color-white); border-radius: 10px; margin-bottom: 0.75rem; border: 1px solid var(--color-gray-200); }
+    .event-location__icon { font-size: 1.25rem; }
+    .event-location__name { font-weight: 600; color: var(--color-black); }
+    .event-location__address { font-size: 0.9rem; color: var(--color-gray-500); }
+    .event-parking { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.875rem 1rem; background: #fffbf0; border-radius: 10px; margin-bottom: 1.5rem; border: 1px solid #f3e0b0; font-size: 0.9rem; color: var(--color-gray-700); }
+    .event-about { background: var(--color-white); border-radius: 12px; padding: 1.5rem; border: 1px solid var(--color-gray-200); }
+    .event-about__title { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-link-blue); }
+    .event-about__content { font-size: 0.95rem; color: var(--color-gray-700); }
+    .event-about__content p { margin-bottom: 1rem; }
+    .event-about__content ul { margin: 1rem 0; padding-left: 0; list-style: none; }
+    .event-about__content li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; }
+    .event-about__content li::before { content: "✓"; position: absolute; left: 0; color: var(--color-link-orange); font-weight: 600; }
+    .event-about__section-title { font-weight: 700; color: var(--color-link-blue); margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .emoji-list li { padding-left: 0 !important; }
+    .emoji-list li::before { display: none !important; }
+    .registration-card { order: 2; background: var(--color-white); border-radius: 12px; padding: 1.25rem 0.875rem; border: 1px solid var(--color-gray-200); box-shadow: 0 4px 20px rgba(0,0,0,0.05); height: fit-content; }
+    @media (min-width: 768px) { .registration-card { order: 2; position: sticky; top: 80px; } }
+    .registration-card__title { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--color-link-blue); }
+    .registration-card__subtitle { font-size: 0.9rem; color: var(--color-gray-500); margin-bottom: 1.25rem; }
+    .event-badge { display: inline-flex; align-items: center; gap: 0.4rem; background: #fff1e2; border: 1px solid #ffd6a3; color: var(--color-link-blue); border-radius: 999px; padding: 0.45rem 0.75rem; margin-bottom: 1rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+    .newsletter-form { display: grid; gap: 0.75rem; margin-top: 1rem; }
+    .newsletter-form__label { font-size: 0.78rem; font-weight: 700; color: var(--color-link-blue); text-transform: uppercase; letter-spacing: 0.04em; }
+    .newsletter-form__input { width: 100%; border: 1px solid var(--color-gray-200); border-radius: 8px; padding: 0.85rem 0.9rem; font: inherit; color: var(--color-black); background: var(--color-white); }
+    .newsletter-form__input:focus { outline: 2px solid rgba(245, 148, 32, 0.25); border-color: var(--color-link-orange); }
+    .newsletter-form__button { width: 100%; border: none; border-radius: 8px; padding: 0.9rem 1rem; background: var(--color-link-orange); color: var(--color-white); font: inherit; font-weight: 700; cursor: pointer; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    .newsletter-form__button:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(245, 148, 32, 0.28); }
+    .newsletter-form__hint { font-size: 0.78rem; color: var(--color-gray-500); line-height: 1.4; }
+    .capacity-note { display: flex; align-items: flex-start; gap: 0.5rem; background: #fffbf0; border: 1px solid #f3e0b0; color: var(--color-gray-700); border-radius: 10px; padding: 0.875rem 1rem; margin-top: 1rem; font-size: 0.9rem; line-height: 1.45; }
+    .capacity-note strong { color: var(--color-link-blue); }
+    .footer { background: var(--color-link-blue); color: white; text-align: center; padding: 1.5rem; margin-top: 3rem; }
+    .footer__text { font-size: 0.85rem; opacity: 0.8; }
+    .footer__link { color: var(--color-link-orange); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="https://linkfoundation.io" class="header__logo">
+        <img src="assets/images/link-foundation-logo.png" alt="Link Foundation">
+      </a>
+      <div>
+        <button class="lang-btn" onclick="toggleLanguage()">
+          <span id="lang-label">EN</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="event-content">
+      <div class="event-cover">
+        <img src="assets/images/flyer-cafecito5-FINAL.png" alt="Cafecito Tech #5: aprende a usar Claude AI como tu asistente">
+      </div>
+      <div class="event-host">
+        <div class="event-host__avatar">&#128279;</div>
+        <span id="hosted-by-text">Organizado por </span><strong id="hosted-by-org">Link Foundation</strong>
+      </div>
+      <h1 class="event-title" id="event-title">Aprende a ser más productivo en tu trabajo y proyectos con Claude AI ☕</h1>
+      <div class="event-datetime">
+        <div class="event-datetime__icon">
+          <span class="event-datetime__month">JUL</span>
+          <span class="event-datetime__day">11</span>
+        </div>
+        <div class="event-datetime__details">
+          <div class="event-datetime__date" id="full-date">Sábado, 11 de julio 2026</div>
+          <div class="event-datetime__time">10:00 AM a 12:00 PM</div>
+        </div>
+      </div>
+      <div class="event-location">
+        <span class="event-location__icon">&#128205;</span>
+        <div>
+          <div class="event-location__name">Industrious NoDa</div>
+          <div class="event-location__address" id="location-address">436 E 36th St, Charlotte, NC 28205</div>
+        </div>
+      </div>
+      <div class="event-parking">
+        <span>&#128664;</span>
+        <span id="parking-text">Parking gratis.</span>
+      </div>
+      <div class="event-about">
+        <h2 class="event-about__title" id="about-title">Acerca del Evento</h2>
+        <div class="event-about__content" id="about-es">
+          <p>En esta serie de eventos en español sobre Claude AI, aprendemos formas simples de trabajar con más claridad, organizar mejor el día y avanzar en lo importante con ayuda de la inteligencia artificial.</p>
+          <p>En esta sesión gratis y en español vas a construir tu propio asistente AI para ordenar ideas, tareas y prioridades, y convertirlo en una herramienta práctica para ser más productivo.</p>
+          <p class="event-about__section-title">Fecha y hora:</p>
+          <ul class="emoji-list">
+            <li>&#128197; Sábado 11 de julio</li>
+            <li>&#128338; 10 AM a 12 PM</li>
+            <li>&#128205; Industrious NoDa · 436 E 36th St, Charlotte NC</li>
+          </ul>
+          <p class="event-about__section-title">En esta sesión aprenderás a:</p>
+          <ul class="emoji-list">
+            <li>&#129504; Entender cómo Claude AI puede ayudarte a pensar con más claridad.</li>
+            <li>&#128203; Organizar tus tareas, prioridades e ideas en un sistema simple.</li>
+            <li>&#129302; Construir un asistente AI que te ayude a planear, avanzar y mantener foco.</li>
+            <li>&#127903;&#65039; Gratis · cupos limitados</li>
+          </ul>
+        </div>
+        <div class="event-about__content" id="about-en" style="display:none;">
+          <p>In this Spanish language Claude AI event series, guests learn simple ways to work with more clarity, organize their day, and make progress on what matters with the help of AI.</p>
+          <p>In this free Spanish session, you will build your own AI assistant to organize ideas, tasks, and priorities, and turn it into a practical tool for productivity.</p>
+          <p class="event-about__section-title">Date and time:</p>
+          <ul class="emoji-list">
+            <li>&#128197; Saturday, July 11</li>
+            <li>&#128338; 10 AM to 12 PM</li>
+            <li>&#128205; Industrious NoDa · 436 E 36th St, Charlotte NC</li>
+          </ul>
+          <p class="event-about__section-title">What you'll learn:</p>
+          <ul class="emoji-list">
+            <li>&#129504; Understand how Claude AI can help you think with more clarity.</li>
+            <li>&#128203; Organize your tasks, priorities, and ideas in a simple system.</li>
+            <li>&#129302; Build an AI assistant that helps you plan, move forward, and stay focused.</li>
+            <li>&#127903;&#65039; Free · limited seats</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="registration-card">
+      <div class="event-badge" id="event-badge">&#127903;&#65039; Gratis · cupos limitados</div>
+      <h3 class="registration-card__title" id="register-title">Reserva tu cupo</h3>
+      <p class="registration-card__subtitle" id="register-subtitle">Completa el formulario para separar tu espacio en Cafecito Tech #5.</p>
+      <div class="newsletter-form" id="newsletter-form-wrapper">
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/form/MzdYusZddC7aQa5kTjVw"
+          style="width:100%;min-height:560px;border:none;border-radius:8px;"
+          id="inline-MzdYusZddC7aQa5kTjVw"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="Cafecito 5"
+          data-height="undefined"
+          data-layout-iframe-id="inline-MzdYusZddC7aQa5kTjVw"
+          data-form-id="MzdYusZddC7aQa5kTjVw"
+          loading="eager"
+          scrolling="no"
+          title="Cafecito 5"
+        ></iframe>
+        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+        <p class="newsletter-form__hint" id="newsletter-hint">30 cupos disponibles.</p>
+      </div>
+      <div class="capacity-note" id="capacity-note">
+        <span>&#9749;</span>
+        <span><strong>Cupos limitados:</strong> limitamos los cupos para que la sesión sea práctica, cercana y productiva.</span>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__text">
+      <span id="footer-text">Una iniciativa de</span>
+      <a href="https://linkfoundation.io" class="footer__link">Link Foundation</a>
+    </p>
+  </footer>
+
+  <script>
+    var lang = localStorage.getItem('cafecito-lang') || 'es';
+    var copy = {
+      es: { hostedBy: 'Organizado por ', eventTitle: 'Aprende a ser más productivo en tu trabajo y proyectos con Claude AI ☕', fullDate: 'Sábado, 11 de julio 2026', locationAddress: '436 E 36th St, Charlotte, NC 28205', parkingText: 'Parking gratis.', aboutTitle: 'Acerca del Evento', eventBadge: '🎟️ Gratis · cupos limitados', registerTitle: 'Reserva tu cupo', registerSubtitle: 'Completa el formulario para separar tu espacio en Cafecito Tech #5.', newsletterHint: '30 cupos disponibles.', capacityNote: '<strong>Cupos limitados:</strong> limitamos los cupos para que la sesión sea práctica, cercana y productiva.', footerText: 'Una iniciativa de', langBtn: '\uD83C\uDDFA\uD83C\uDDF8 EN' },
+      en: { hostedBy: 'Hosted by ', eventTitle: 'Learn to be more productive in your work and projects with Claude AI ☕', fullDate: 'Saturday, July 11, 2026', locationAddress: '436 E 36th St, Charlotte, NC 28205', parkingText: 'Free parking.', aboutTitle: 'About the Event', eventBadge: '🎟️ Free · limited seats', registerTitle: 'Reserve your spot', registerSubtitle: 'Complete the form to save your seat for Cafecito Tech #5.', newsletterHint: '30 seats available.', capacityNote: '<strong>Limited seats:</strong> we limit capacity so the session stays practical, personal, and productive.', footerText: 'An initiative of', langBtn: '\uD83C\uDDEA\uD83C\uDDF8 ES' }
+    };
+    function applyLanguage() {
+      var t = copy[lang];
+      document.getElementById('hosted-by-text').textContent = t.hostedBy;
+      document.getElementById('event-title').textContent = t.eventTitle;
+      document.getElementById('full-date').textContent = t.fullDate;
+      document.getElementById('location-address').textContent = t.locationAddress;
+      document.getElementById('parking-text').textContent = t.parkingText;
+      document.getElementById('about-title').textContent = t.aboutTitle;
+      document.getElementById('event-badge').textContent = t.eventBadge;
+      document.getElementById('register-title').textContent = t.registerTitle;
+      document.getElementById('register-subtitle').textContent = t.registerSubtitle;
+      document.getElementById('newsletter-hint').textContent = t.newsletterHint;
+      document.getElementById('capacity-note').querySelector('span:last-child').innerHTML = t.capacityNote;
+      document.getElementById('footer-text').textContent = t.footerText;
+      document.getElementById('lang-label').textContent = t.langBtn;
+      document.getElementById('about-es').style.display = lang === 'es' ? 'block' : 'none';
+      document.getElementById('about-en').style.display = lang === 'en' ? 'block' : 'none';
+      document.documentElement.lang = lang;
+    }
+    function toggleLanguage() {
+      lang = lang === 'es' ? 'en' : 'es';
+      localStorage.setItem('cafecito-lang', lang);
+      applyLanguage();
+    }
+    applyLanguage();
+  </script>
+</body>
+</html>
