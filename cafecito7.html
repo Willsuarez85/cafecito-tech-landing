@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sábado 10 de octubre en Charlotte. Emprendedores latinos de nuestra comunidad cuentan cómo están usando la IA en sus negocios y cómo algunos están creando negocios nuevos con ella. Casos reales, café y desayuno. Gratis, en español, 35 cupos.">
-  <meta property="og:title" content="Un cafecito para hablar de IA y negocios · Cafecito Tech">
-  <meta property="og:description" content="Sábado 10 de octubre en Charlotte. Emprendedores latinos de nuestra comunidad cuentan cómo están usando la IA en sus negocios y cómo algunos están creando negocios nuevos con ella. Casos reales, café y desayuno. Gratis, en español, 35 cupos.">
+  <meta name="description" content="Sábado 10 de octubre en Charlotte. Emprendedores latinos de la comunidad cuentan cómo usan la IA en sus negocios y cómo crean negocios con ella. Gratis, en español, 35 cupos.">
+  <meta property="og:title" content="Un cafecito para hablar de IA y negocios · Cafecito Tech #7">
+  <meta property="og:description" content="Sábado 10 de octubre en Charlotte. Emprendedores latinos de la comunidad cuentan cómo usan la IA en sus negocios y cómo crean negocios con ella. Gratis, en español, 35 cupos.">
   <meta property="og:image" content="https://cafecito-tech.vercel.app/assets/images/banner-cafecito7.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cafecito-tech.vercel.app/cafecito7">
   <meta name="twitter:card" content="summary_large_image">
-  <title>Un cafecito para hablar de IA y negocios · Cafecito Tech</title>
+  <title>Un cafecito para hablar de IA y negocios · Cafecito Tech #7</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -62,6 +62,11 @@
     .newsletter-form__hint { font-size: 0.78rem; color: var(--color-gray-500); line-height: 1.4; }
     .capacity-note { display: flex; align-items: flex-start; gap: 0.5rem; background: #fffbf0; border: 1px solid #f3e0b0; color: var(--color-gray-700); border-radius: 10px; padding: 0.875rem 1rem; margin-top: 1rem; font-size: 0.9rem; line-height: 1.45; }
     .capacity-note strong { color: var(--color-link-blue); }
+    .event-title__accent { color: var(--color-link-orange); }
+    .event-location__address a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+    .topic-list { margin: 1rem 0 !important; display: grid; gap: 0.5rem; }
+    .topic-list li { background: var(--color-gray-50); border: 1px solid var(--color-gray-200); border-radius: 8px; padding: 0.8rem 1rem !important; font-weight: 600; color: var(--color-link-blue); }
+    .topic-list li::before { display: none !important; }
     .footer { background: var(--color-link-blue); color: white; text-align: center; padding: 1.5rem; margin-top: 3rem; }
     .footer__text { font-size: 0.85rem; opacity: 0.8; }
     .footer__link { color: var(--color-link-orange); text-decoration: none; }
@@ -90,12 +95,12 @@
         <div class="event-host__avatar">&#128279;</div>
         <span id="hosted-by-text">Organizado por </span><strong id="hosted-by-org">Link Foundation</strong>
       </div>
-      <h1 class="event-title" id="event-title">Un cafecito para hablar de IA y negocios</h1>
+      <h1 class="event-title" id="event-title">Un cafecito para hablar de <span class="event-title__accent">IA y negocios</span></h1>
       <p class="event-lead" id="event-lead">Cafecito Tech vuelve el sábado 10 de octubre. Esta vez los protagonistas son emprendedores latinos de nuestra comunidad, que van a contar cómo están usando la inteligencia artificial en sus negocios y cómo algunos están creando negocios nuevos con ella. Casos reales, sin teoría. Ven a aprender, a preguntar y a compartir tus ideas. Si estás pensando en emprender o quieres usar la IA en tu negocio, este es tu espacio.</p>
       <div class="event-about">
         <h2 class="event-about__title" id="about-title">Lo que vas a encontrar:</h2>
         <div class="event-about__content" id="about-es">
-          <ul>
+          <ul class="topic-list">
             <li>Emprendedores latinos contando qué les ha funcionado con la IA y qué no.</li>
             <li>Ideas de negocio que hoy son posibles gracias a la IA.</li>
             <li>Herramientas que puedes probar en tu negocio desde el lunes.</li>
@@ -103,9 +108,9 @@
           </ul>
         </div>
         <div class="event-about__content" id="about-en" style="display:none;">
-          <ul>
+          <ul class="topic-list">
             <li>Latino entrepreneurs sharing what has worked for them with AI and what has not.</li>
-            <li>Business ideas that are possible today thanks to AI.</li>
+            <li>Business ideas that AI makes possible today.</li>
             <li>Tools you can try in your business starting Monday.</li>
             <li>Time to ask questions, share your idea and connect with other entrepreneurs.</li>
           </ul>
@@ -126,7 +131,7 @@
         <span class="event-location__icon">&#128205;</span>
         <div>
           <div class="event-location__name">Industrious NoDa</div>
-          <div class="event-location__address" id="location-address">436 E 36th St, Charlotte, NC 28205</div>
+          <div class="event-location__address" id="location-address"><a href="https://share.google/hylsvb7e54oBHGEIh" target="_blank" rel="noopener">436 E 36th St, Charlotte, NC 28205</a></div>
         </div>
       </div>
       <div class="event-parking">
@@ -187,12 +192,11 @@
     var copy = {
       es: {
         hostedBy: 'Organizado por ',
-        eventTitle: 'Un cafecito para hablar de IA y negocios',
+        eventTitle: 'Un cafecito para hablar de <span class="event-title__accent">IA y negocios</span>',
         eventLead: 'Cafecito Tech vuelve el sábado 10 de octubre. Esta vez los protagonistas son emprendedores latinos de nuestra comunidad, que van a contar cómo están usando la inteligencia artificial en sus negocios y cómo algunos están creando negocios nuevos con ella. Casos reales, sin teoría. Ven a aprender, a preguntar y a compartir tus ideas. Si estás pensando en emprender o quieres usar la IA en tu negocio, este es tu espacio.',
         dateMonth: 'OCT',
         fullDate: 'Sábado, 10 de octubre de 2026',
         eventTime: '10:00 AM a 12:00 PM',
-        locationAddress: '436 E 36th St, Charlotte, NC 28205',
         parkingText: 'Parking gratis.',
         aboutTitle: 'Lo que vas a encontrar:',
         closingLine: 'Café, desayuno y buena conversación. ☕',
@@ -205,19 +209,18 @@
       },
       en: {
         hostedBy: 'Hosted by ',
-        eventTitle: 'A coffee to talk about AI and business',
-        eventLead: 'Cafecito Tech is back on Saturday, October 10. This time the spotlight is on Latino entrepreneurs from our community, who will share how they are using artificial intelligence in their businesses and how some of them are building new businesses with it. Real stories, no theory. Come learn, ask questions and share your ideas. If you are thinking about starting a business or want to use AI in yours, this is your space.',
+        eventTitle: 'A cafecito to talk about <span class="event-title__accent">AI and business</span>',
+        eventLead: 'Cafecito Tech is back on Saturday, October 10. This time the spotlight is on Latino entrepreneurs from our community, who will share how they are using artificial intelligence in their businesses and how some of them are building new businesses with it. Real stories, no theory. Come to learn, ask questions and share your ideas. If you are thinking about starting a business or want to use AI in the one you have, this is your space.',
         dateMonth: 'OCT',
         fullDate: 'Saturday, October 10, 2026',
         eventTime: '10:00 AM to 12:00 PM',
-        locationAddress: '436 E 36th St, Charlotte, NC 28205',
         parkingText: 'Free parking.',
         aboutTitle: 'What you will find:',
         closingLine: 'Coffee, breakfast and good conversation. ☕',
         eventBadge: '🎟️ Free · in Spanish',
-        registerTitle: 'Reserve your spot',
+        registerTitle: 'Save your spot',
         registerSubtitle: 'Complete the form to save your spot at Cafecito Tech #7.',
-        capacityNote: '<strong>35 spots.</strong> We keep it small so the conversation stays close and everyone gets to take part.',
+        capacityNote: '<strong>35 spots.</strong> We keep it small so the conversation stays close and everyone gets a chance to take part.',
         footerText: 'An initiative of',
         langBtn: '🇪🇸 ES'
       }
@@ -225,12 +228,11 @@
     function applyLanguage() {
       var t = copy[lang];
       document.getElementById('hosted-by-text').textContent = t.hostedBy;
-      document.getElementById('event-title').textContent = t.eventTitle;
+      document.getElementById('event-title').innerHTML = t.eventTitle;
       document.getElementById('event-lead').textContent = t.eventLead;
       document.getElementById('date-month').textContent = t.dateMonth;
       document.getElementById('full-date').textContent = t.fullDate;
       document.getElementById('event-time').textContent = t.eventTime;
-      document.getElementById('location-address').textContent = t.locationAddress;
       document.getElementById('parking-text').textContent = t.parkingText;
       document.getElementById('about-title').textContent = t.aboutTitle;
       document.getElementById('closing-line').textContent = t.closingLine;
